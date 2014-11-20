@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
 <title>DeNA GAME TOOLS</title>
 <meta charset="utf-8">
 <link rel="shortcut icon" href="/favicon.png?v=2" type="image/png">
@@ -9,3 +12,5 @@
 <script type="text/javascript" src='<?php echo js_url('jquery.min.js'); ?>'></script> 
 <script type="text/javascript" src='<?php echo js_url('angular.js'); ?>'></script> 
 <script type="text/javascript" src='<?php echo js_url('bootstrap.min.js'); ?>'></script> 
+</head>
+<body>

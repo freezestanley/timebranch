@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <?php include 'header.php'?>    
-</head>
-<body>
+<?php include 'header.php'?>   
 <div>
 
 </div>
-</body>
-</html>
+<?php include 'footer.php'?>   
