@@ -9,6 +9,7 @@
 <meta name="renderer" content="webkit">
 <meta name="author" content="xx">
 <meta http-equiv="Cache-Control" content="no-siteapp">
+<link href="<?php echo css_url("bootstrap.min.css");?>" rel="stylesheet">
 <script type="text/javascript" src='<?php echo js_url('jquery.min.js'); ?>'></script> 
 <script type="text/javascript" src='<?php echo js_url('angular.js'); ?>'></script> 
 <script type="text/javascript" src='<?php echo js_url('bootstrap.min.js'); ?>'></script> 
