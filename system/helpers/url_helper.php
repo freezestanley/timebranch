@@ -71,6 +71,72 @@ if ( ! function_exists('base_url'))
 // ------------------------------------------------------------------------
 
 /**
+ * Base Css URL
+ * 
+ * Create a local URL based on your basepath.
+ * Segments can be passed in as a string or an array, same as site_url
+ * or a URL to a file can be passed in, e.g. to an image file.
+ *
+ * @access	public
+ * @param string
+ * @return	string
+ */
+if ( ! function_exists('css_url'))
+{
+	function css_url($uri = '')
+	{
+		$CI =& get_instance();
+		return $CI->config->base_url("/public/css/".$uri);
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Base JS URL
+ * 
+ * Create a local URL based on your basepath.
+ * Segments can be passed in as a string or an array, same as site_url
+ * or a URL to a file can be passed in, e.g. to an image file.
+ *
+ * @access	public
+ * @param string
+ * @return	string
+ */
+if ( ! function_exists('js_url'))
+{
+	function js_url($uri = '')
+	{
+		$CI =& get_instance();
+		return $CI->config->base_url("/public/js/".$uri);
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Base Img URL
+ * 
+ * Create a local URL based on your basepath.
+ * Segments can be passed in as a string or an array, same as site_url
+ * or a URL to a file can be passed in, e.g. to an image file.
+ *
+ * @access	public
+ * @param string
+ * @return	string
+ */
+if ( ! function_exists('img_url'))
+{
+	function img_url($uri = '')
+	{
+		$CI =& get_instance();
+		return $CI->config->base_url("/public/image/".$uri);
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
  * Current URL
  *
  * Returns the full URL (including segments) of the page where this
