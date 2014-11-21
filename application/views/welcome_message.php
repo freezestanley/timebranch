@@ -60,45 +60,71 @@
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
           <div class="caption">
-            <h3>Thumbnail label</h3>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            
+            <h3>NBA 官网上线</h3>
+            <div>
+            	<table>
+                	<tr><td>平台：</td><td>Android</td></tr>
+                    <tr><td>市场：</td><td>大陆</td></tr>
+                    <tr><td>开始：</td><td>2014-09-01</td></tr>
+                    <tr><td>结束：</td><td>2014-09-01</td></tr>
+                    </tr>
+                </table>
+                <div class="cap_title">项目进度：</div>
+            	<div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                    60%
+                  </div>
+                </div>
+                
+            </div>
           </div>
         </div>
       </div>
+      
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
           <div class="caption">
-            <h3>Thumbnail label</h3>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            
+            <h3>NBA 官网上线</h3>
+            <div>
+            	<table>
+                	<tr><td>平台：</td><td>Android</td></tr>
+                    <tr><td>市场：</td><td>大陆</td></tr>
+                    <tr><td>开始：</td><td>2014-09-01</td></tr>
+                    <tr><td>结束：</td><td>2014-09-01</td></tr>
+                    </tr>
+                </table>
+                <div class="cap_title">项目进度：</div>
+            	<div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                    60%
+                  </div>
+                </div>
+                
+            </div>
           </div>
         </div>
       </div>
+      
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
           <div class="caption">
-            <h3>Thumbnail label</h3>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <div class="caption">
-            <h3>Thumbnail label</h3>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <div class="caption">
-            <h3>Thumbnail label</h3>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-           
+            <h3>NBA 官网上线</h3>
+            <div>
+            	<table>
+                	<tr><td>平台：</td><td>Android</td></tr>
+                    <tr><td>市场：</td><td>大陆</td></tr>
+                    <tr><td>开始：</td><td>2014-09-01</td></tr>
+                    <tr><td>结束：</td><td>2014-09-01</td></tr>
+                    </tr>
+                </table>
+                <div class="cap_title">项目进度：</div>
+            	<div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                    60%
+                  </div>
+                </div>
+                
+            </div>
           </div>
         </div>
       </div>

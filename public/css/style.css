@@ -35,4 +35,6 @@ border-radius: 3px;
 .bs-callout-info {
 border-left-color:#1C67AC;
 }
-text[text-anchor="end"]{display:block;}
+.caption h3{margin-top:5px;}
+.caption table{ margin-bottom:5px;}
+.cap_title{ margin-bottom:5px;}
