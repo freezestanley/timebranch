@@ -5,5 +5,5 @@ function MenuController($scope){
 	
 };
 function detailController($scope){
-	$scope.menuState={'show':false};
+	$scope.menuState={'show':true};
 };
