@@ -165,7 +165,7 @@
     </div>
   </div>
   <div class="tab_zone">
-    <div class="well">
+    <div class="well" ng-controller="totalController">
       <div class="row">
         <div class="col-xs-2">
           <select class="form-control">
@@ -176,18 +176,7 @@
         </div>
         <nav>
           <ul class="pagination total_num">
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">6</a></li>
-            <li><a href="#">7</a></li>
-            <li><a href="#">8</a></li>
-            <li><a href="#">9</a></li>
-            <li><a href="#">10</a></li>
-            <li><a href="#">11</a></li>
-            <li><a href="#">12</a></li>
+            <li ng-repeat = "m in month"><a href="#">{{m}}</a></li>
           </ul>
         </nav>
       </div>
