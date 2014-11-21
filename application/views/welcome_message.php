@@ -287,8 +287,8 @@
                             if (drilldown) { // drill down
                                 setChart(drilldown.name, drilldown.categories, drilldown.data, drilldown.color);
                             } else { // restore
-                                setChart(name, categories, data);
-								alert('fffffffffffff');
+                                //setChart(name, categories, data);
+								//alert('fffffffffffff');
                             }
                         }
                     }
