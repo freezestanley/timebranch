@@ -1,5 +1,243 @@
-<?php include 'header.php'?>   
-<div>
+<?php include 'header.php'?>
+  <div class="jumbotron">
+    <h2 style="padding-top: 13px;">DeNA Project TimeLine</h2>
+    <p class="lead">展示各个游戏项目的上线时间。<br>
+      便于公司各相关部门了解各个项目的时间安排，任务上线和结束时间。</p>
+  </div>
+  <div class="bs-callout bs-callout-info">
+    <div class="row">
+      <div class="col-xs-3">
+        <select class="form-control">
+          <option>All</option>
+          <option>NBA</option>
+          <option>CK</option>
+          <option>One Price</option>
+        </select>
+      </div>
+      <div class="col-xs-2">
+        <select class="form-control">
+          <option>All</option>
+          <option>大陆</option>
+          <option>台湾</option>
+          <option>海外</option>
+        </select>
+      </div>
+      <div class="col-xs-2">
+        <select class="form-control">
+          <option>All</option>
+          <option>IOS</option>
+          <option>Android</option>
+          <option>Winphone</option>
+        </select>
+      </div>
+      <div class="col-xs-2">
+        <select class="form-control">
+          <option>2011</option>
+          <option>2011</option>
+          <option>2011</option>
+        </select>
+      </div>
+      <div class="col-xs-2">
+        <select class="form-control">
+          <option>全年</option>
+          <option>第一季度</option>
+          <option>第二季度</option>
+          <option>第三季度</option>
+          <option>第四季度</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div id="container" style="min-width:700px;height:400px"></div>
+  <div>
+    <div class="row">
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <div class="caption">
+            <h3>Thumbnail label</h3>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <div class="caption">
+            <h3>Thumbnail label</h3>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <div class="caption">
+            <h3>Thumbnail label</h3>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <div class="caption">
+            <h3>Thumbnail label</h3>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <div class="caption">
+            <h3>Thumbnail label</h3>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div align="center">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default">统计信息</button>
+      <button type="button" class="btn btn-default">历史记录</button>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    var colors = Highcharts.getOptions().colors,
+        categories = ['NBA', 'CK', 'One price', '妖精的尾巴', '死神'],
+        name = ' ',
+        data = [{
+                y: 5,
+                color: colors[0],
+                drilldown: {
+                    name: 'MSIE versions',
+                    categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9.0'],
+                    data: [10.85, 7.35, 33.06, 2.81],
+                    color: colors[0]
+                }
+            }, {
+                y: 30,
+                color: colors[1],
+                drilldown: {
+                    name: 'Firefox versions',
+                    categories: ['Firefox 2.0', 'Firefox 3.0', 'Firefox 3.5', 'Firefox 3.6', 'Firefox 4.0'],
+                    data: [0.20, 0.83, 1.58, 13.12, 5.43],
+                    color: colors[1]
+                }
+            }, {
+                y: 30,
+                color: colors[2],
+                drilldown: {
+                    name: 'Chrome versions',
+                    categories: ['Chrome 5.0', 'Chrome 6.0', 'Chrome 7.0', 'Chrome 8.0', 'Chrome 9.0',
+                        'Chrome 10.0', 'Chrome 11.0', 'Chrome 12.0'],
+                    data: [0.12, 0.19, 0.12, 0.36, 0.32, 9.91, 0.50, 0.22],
+                    color: colors[2]
+                }
+            }, {
+                y: 30,
+                color: colors[3],
+                drilldown: {
+                    name: 'Safari versions',
+                    categories: ['Safari 5.0', 'Safari 4.0', 'Safari Win 5.0', 'Safari 4.1', 'Safari/Maxthon',
+                        'Safari 3.1', 'Safari 4.1'],
+                    data: [4.55, 1.42, 0.23, 0.21, 0.20, 0.19, 0.14],
+                    color: colors[3]
+                }
+            }, {
+                y: 30,
+                color: colors[4],
+                drilldown: {
+                    name: 'Opera versions',
+                    categories: ['Opera 9.x', 'Opera 10.x', 'Opera 11.x'],
+                    data: [ 0.12, 0.37, 1.65],
+                    color: colors[4]
+                }
+            }];
 
-</div>
-<?php include 'footer.php'?>   
+    function setChart(name, categories, data, color) {
+	chart.xAxis[0].setCategories(categories, false);
+	chart.series[0].remove(false);
+	chart.addSeries({
+		name: name,
+		data: data,
+		color: color || 'white'
+	}, false);
+	chart.redraw();
+    }
+
+    var chart = $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '2014年7月 游戏任务'
+        },
+        subtitle: {
+            text: '点击柱状图察看详情'
+        },
+        xAxis: {
+            categories: categories
+        },
+        yAxis: {
+            title: {
+                text: '游戏任务数量'
+            }
+        },
+        plotOptions: {
+            column: {
+                cursor: 'pointer',
+                point: {
+                    events: {
+                        click: function() {
+                            var drilldown = this.drilldown;
+                            if (drilldown) { // drill down
+                                setChart(drilldown.name, drilldown.categories, drilldown.data, drilldown.color);
+                            } else { // restore
+                                setChart(name, categories, data);
+								alert('fffffffffffff');
+                            }
+                        }
+                    }
+                },
+                dataLabels: {
+                    enabled: true,
+                    color: colors[0],
+                    style: {
+                        fontWeight: 'bold'
+                    },
+                    formatter: function() {
+                        return this.y+'个';
+                    }
+                }
+            }
+        },
+        tooltip: {
+            formatter: function() {
+                var point = this.point,
+                    s = this.x +':<b>'+ this.y +' market share</b><br/>';
+                if (point.drilldown) {
+                    s += 'Click to view '+ point.category +' versions';
+                } else {
+                    s += 'Click to return to browser brands';
+                }
+                return s;
+            }
+        },
+        series: [{
+            name: name,
+            data: data,
+            color: 'white'
+        }],
+        exporting: {
+            enabled: false
+        }
+    })
+
+});			
+
+  </script>
+  <?php include 'footer.php'?>
