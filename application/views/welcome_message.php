@@ -50,115 +50,162 @@
   </div>
   <div id="container" style="min-width:700px;height:400px"></div>
   <div>
-  
-  <div class="panel panel-primary">
+    <div class="panel panel-primary">
       <div class="panel-heading">
         <h3 class="panel-title">2014年第1季</h3>
       </div>
       <div class="panel-body">
-         <div class="row">
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <div class="caption">
-            <h3>NBA 官网上线</h3>
-            <div>
-            	<table>
-                	<tr><td>平台：</td><td>Android</td></tr>
-                    <tr><td>市场：</td><td>大陆</td></tr>
-                    <tr><td>开始：</td><td>2014-09-01</td></tr>
-                    <tr><td>结束：</td><td>2014-09-01</td></tr>
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <div class="caption">
+                <h3>NBA 官网上线</h3>
+                <div>
+                  <table>
+                    <tr>
+                      <td>平台：</td>
+                      <td>Android</td>
                     </tr>
-                </table>
-                <div class="cap_title">项目进度：</div>
-            	<div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                    60%
+                    <tr>
+                      <td>市场：</td>
+                      <td>大陆</td>
+                    </tr>
+                    <tr>
+                      <td>开始：</td>
+                      <td>2014-09-01</td>
+                    </tr>
+                    <tr>
+                      <td>结束：</td>
+                      <td>2014-09-01</td>
+                    </tr>
+                      </tr>
+                    
+                  </table>
+                  <div class="cap_title">项目进度：</div>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"> 60% </div>
                   </div>
                 </div>
-                
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <div class="caption">
-            <h3>NBA 官网上线</h3>
-            <div>
-            	<table>
-                	<tr><td>平台：</td><td>Android</td></tr>
-                    <tr><td>市场：</td><td>大陆</td></tr>
-                    <tr><td>开始：</td><td>2014-09-01</td></tr>
-                    <tr><td>结束：</td><td>2014-09-01</td></tr>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <div class="caption">
+                <h3>NBA 官网上线</h3>
+                <div>
+                  <table>
+                    <tr>
+                      <td>平台：</td>
+                      <td>Android</td>
                     </tr>
-                </table>
-                <div class="cap_title">项目进度：</div>
-            	<div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                    60%
+                    <tr>
+                      <td>市场：</td>
+                      <td>大陆</td>
+                    </tr>
+                    <tr>
+                      <td>开始：</td>
+                      <td>2014-09-01</td>
+                    </tr>
+                    <tr>
+                      <td>结束：</td>
+                      <td>2014-09-01</td>
+                    </tr>
+                      </tr>
+                    
+                  </table>
+                  <div class="cap_title">项目进度：</div>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"> 60% </div>
                   </div>
                 </div>
-                
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <div class="caption">
-            <h3>NBA 官网上线</h3>
-            <div>
-            	<table>
-                	<tr><td>平台：</td><td>Android</td></tr>
-                    <tr><td>市场：</td><td>大陆</td></tr>
-                    <tr><td>开始：</td><td>2014-09-01</td></tr>
-                    <tr><td>结束：</td><td>2014-09-01</td></tr>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <div class="caption">
+                <h3>NBA 官网上线</h3>
+                <div>
+                  <table>
+                    <tr>
+                      <td>平台：</td>
+                      <td>Android</td>
                     </tr>
-                </table>
-                <div class="cap_title">项目进度：</div>
-            	<div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                    60%
+                    <tr>
+                      <td>市场：</td>
+                      <td>大陆</td>
+                    </tr>
+                    <tr>
+                      <td>开始：</td>
+                      <td>2014-09-01</td>
+                    </tr>
+                    <tr>
+                      <td>结束：</td>
+                      <td>2014-09-01</td>
+                    </tr>
+                      </tr>
+                    
+                  </table>
+                  <div class="cap_title">项目进度：</div>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"> 60% </div>
                   </div>
                 </div>
-                
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-      </div>
-    </div>
-  
-  
-  
-   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
   </div>
   <div align="center">
     <div class="btn-group">
       <button type="button" class="btn btn-default">统计信息</button>
       <button type="button" class="btn btn-default">历史记录</button>
+    </div>
+  </div>
+  <div class="tab_zone">
+    <div class="well">
+      <div class="row">
+        <div class="col-xs-2">
+          <select class="form-control">
+            <option>2011</option>
+            <option>2011</option>
+            <option>2011</option>
+          </select>
+        </div>
+        <nav>
+          <ul class="pagination total_num">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+            <li><a href="#">11</a></li>
+            <li><a href="#">12</a></li>
+          </ul>
+        </nav>
+      </div>
+          <div>
+            <div class="panel panel-default">
+              <div class="panel-body"> Basic panel example </div>
+            </div>
+            
+            <div class="panel panel-default">
+              <div class="panel-body"> Basic panel example </div>
+            </div>
+            
+            
+            <div class="panel panel-default">
+              <div class="panel-body"> Basic panel example </div>
+            </div>
+          </div>
     </div>
   </div>
   <script>
