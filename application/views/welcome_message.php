@@ -169,9 +169,7 @@
       <div class="row">
         <div class="col-xs-2">
           <select class="form-control">
-            <option>2011</option>
-            <option>2011</option>
-            <option>2011</option>
+            <option ng-repeat = "t in times">{{t}}</option>
           </select>
         </div>
         <nav>
