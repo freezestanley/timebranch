@@ -4,7 +4,7 @@
     <p class="lead">展示各个游戏项目的上线时间。<br>
       便于公司各相关部门了解各个项目的时间安排，任务上线和结束时间。</p>
   </div>
-  <div class="bs-callout bs-callout-info">
+  <div class="bs-callout bs-callout-info" ng-controller="MenuController">
     <div class="row">
       <div class="col-xs-3">
         <select class="form-control">
@@ -31,19 +31,13 @@
         </select>
       </div>
       <div class="col-xs-2">
-        <select class="form-control">
-          <option>2011</option>
-          <option>2011</option>
-          <option>2011</option>
+        <select class="form-control" >
+          <option ng-repeat="time in times">{{time}}</option>
         </select>
       </div>
       <div class="col-xs-2">
         <select class="form-control">
-          <option>全年</option>
-          <option>第一季度</option>
-          <option>第二季度</option>
-          <option>第三季度</option>
-          <option>第四季度</option>
+           <option ng-repeat="seas in season">{{seas}}</option>
         </select>
       </div>
     </div>
@@ -343,5 +337,9 @@
 
 });			
 
+
+var year_time = [2014,2015,2016,2017,2018];
+var season_time = ['全年','第1季度','第2季度','第3季度','第4季度'];
   </script>
+  <script type="text/javascript" src="<?php echo js_url('js.js');?>"></script>
   <?php include 'footer.php'?>

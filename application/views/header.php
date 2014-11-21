@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  ng-app >
 <head>
 <title>DeNA GAME TOOLS</title>
 <meta charset="utf-8">
