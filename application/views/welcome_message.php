@@ -35,6 +35,7 @@
           <option ng-repeat="time in times">{{time}}</option>
         </select>
       </div>
+      
       <div class="col-xs-2">
         <select class="form-control">
            <option ng-repeat="seas in season">{{seas}}</option>
@@ -42,11 +43,15 @@
       </div>
     </div>
   </div>
+  
+  
   <div id="container" style="min-width:700px;height:400px"></div>
-  <div>
+  
+  
+  <div  ng-controller="detailController" ng-show="menuState.show">
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <h3 class="panel-title">2014年第1季</h3>
+        <h3 class="panel-title"></h3>
       </div>
       <div class="panel-body">
         <div class="row">
