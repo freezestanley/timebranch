@@ -6,48 +6,64 @@
   </div>
   <div class="bs-callout bs-callout-info" ng-controller="MenuController">
     <div class="row">
-      <div class="col-xs-3">
-        <select class="form-control">
-          <option>All</option>
-          <option>NBA</option>
-          <option>CK</option>
-          <option>One Price</option>
+      <div class="col-xs-2">
+        <select class="form-control" ng-model="param.game" ng-options="o.id as o.gameName for o in menu_game">
+          <option value="">-- 请选择 --</option>
         </select>
       </div>
       <div class="col-xs-2">
-        <select class="form-control">
-          <option>All</option>
-          <option>大陆</option>
-          <option>台湾</option>
-          <option>海外</option>
+        <select class="form-control" ng-model="param.market" ng-options="m.value as m.pf for m in menu_market">
+          <option value="">-- 请选择 --</option>
         </select>
       </div>
       <div class="col-xs-2">
-        <select class="form-control">
-          <option>All</option>
-          <option>IOS</option>
-          <option>Android</option>
-          <option>Winphone</option>
+        <select class="form-control"  ng-model="param.platform" ng-options="p.market for p in menu_platform">
+          <option value="">-- 请选择 --</option>
         </select>
       </div>
       <div class="col-xs-2">
-        <select class="form-control" >
-          <option ng-repeat="time in times">{{time}}</option>
-        </select>
+        <!--<select class="form-control" ng-model="param.time" ng-options="y for y in times" >
+        </select>-->
+        <input class="form-control"  id="starttime" type="text" placeholder="开始时间" />
       </div>
-      
       <div class="col-xs-2">
-        <select class="form-control">
-           <option ng-repeat="seas in season">{{seas}}</option>
-        </select>
+        <!--<select class="form-control" ng-model="param.current_sea" ng-options="s.s for s in season" >
+        </select>-->
+        <input class="form-control"  id="endtime" type="text"  placeholder="结束时间" />
       </div>
     </div>
   </div>
   
   
-  <div id="container" style="min-width:700px;height:400px"></div>
+  <div class="tab_zone">
+    <div class="well" ng-controller="totalController">
+      <div class="row">
+        <div class="col-xs-2">
+          <!--<select class="form-control" ng-model="time" ng-options="y for y in times">
+          </select>-->
+        </div>
+        <nav>
+          <ul class="pagination total_num">
+            <li ng-repeat = "m in month"><a href="#">{{m}}</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div>
+        <div class="panel panel-default">
+          <div class="panel-body"> Basic panel example </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body"> Basic panel example </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body"> Basic panel example </div>
+        </div>
+      </div>
+    </div>
+  </div>
   
   
+  <div ng-view></div>
   <div  ng-controller="detailController" ng-show="menuState.show">
     <div class="panel panel-primary">
       <div class="panel-heading">
@@ -164,36 +180,10 @@
       <button type="button" class="btn btn-default">历史记录</button>
     </div>
   </div>
-  <div class="tab_zone">
-    <div class="well" ng-controller="totalController">
-      <div class="row">
-        <div class="col-xs-2">
-          <select class="form-control">
-            <option ng-repeat = "t in times">{{t}}</option>
-          </select>
-        </div>
-        <nav>
-          <ul class="pagination total_num">
-            <li ng-repeat = "m in month"><a href="#">{{m}}</a></li>
-          </ul>
-        </nav>
-      </div>
-          <div>
-            <div class="panel panel-default">
-              <div class="panel-body"> Basic panel example </div>
-            </div>
-            
-            <div class="panel panel-default">
-              <div class="panel-body"> Basic panel example </div>
-            </div>
-            
-            
-            <div class="panel panel-default">
-              <div class="panel-body"> Basic panel example </div>
-            </div>
-          </div>
-    </div>
-  </div>
+  
+    <div id="container" style="min-width:700px;height:400px"></div>
+  
+  
   <script>
     $(function () {
     var colors = Highcharts.getOptions().colors,
@@ -330,8 +320,25 @@
 });			
 
 
-var year_time = [2014,2015,2016,2017,2018];
-var season_time = ['全年','第1季度','第2季度','第3季度','第4季度'];
-  </script>
+//var menu_time = [2014,2015,2016,2017,2018,2019,2020];
+//var season_time = [{s:'全年',v:0},{s:'第1季度',v:1},{s:'第2季度',v:2},{s:'第3季度',v:3},{s:'第4季度',v:4}];
+var menu_game = [{id:1001,gameName:'NBA'},{id:1001,gameName:'ck'},{id:1001,gameName:'tf'}];
+var menu_form = [{market:'大陆',value:'1'},{market:'台湾',value:'2'},{market:'海外',value:'3'}];
+var menu_market = [{pf:'IOS',value:1},{pf:'Android',value:2},{pf:'Winphone',value:3}];
+
+ jQuery(function () {
+            // 时间设置
+            jQuery('#starttime').datetimepicker({
+               // timeFormat: "HH:mm:ss",
+                dateFormat: "yy-mm-dd"
+            });
+			jQuery('#endtime').datetimepicker({
+				//timeFormat: "HH:mm:ss",
+				dateFormat: "yy-mm-dd"
+			});
+        });
+		
+		
+  </script> 
   <script type="text/javascript" src="<?php echo js_url('js.js');?>"></script>
   <?php include 'footer.php'?>
