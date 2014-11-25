@@ -12,6 +12,9 @@ var gametool = angular.module('gameTool',[])
 							
 							//$scope.times = menu_time;
 							//$scope.season = season_time;
+							$scope.param.endtime = new Date().getFullYear()+'-'+new Date().getMonth()+'-'+new Date().getDate();
+							$scope.param.starttime = new Date().getFullYear()+'-'+new Date().getMonth()+'-'+new Date().getDate();
+							
 							$scope.menu_game = menu_game;
 							$scope.menu_market = menu_market
 							$scope.menu_platform = menu_form;

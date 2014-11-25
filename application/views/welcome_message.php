@@ -24,12 +24,12 @@
       <div class="col-xs-2">
         <!--<select class="form-control" ng-model="param.time" ng-options="y for y in times" >
         </select>-->
-        <input class="form-control"  id="starttime" type="text" placeholder="开始时间" />
+        <input class="form-control"  id="starttime" type="text" placeholder="开始时间" ng-model="param.starttime"/>
       </div>
       <div class="col-xs-2">
         <!--<select class="form-control" ng-model="param.current_sea" ng-options="s.s for s in season" >
         </select>-->
-        <input class="form-control"  id="endtime" type="text"  placeholder="结束时间" />
+        <input class="form-control"  id="endtime" type="text"  placeholder="结束时间" ng-model="param.endtime"/>
       </div>
     </div>
   </div>
