@@ -4,7 +4,8 @@
     <p class="lead">展示各个游戏项目的上线时间。<br>
       便于公司各相关部门了解各个项目的时间安排，任务上线和结束时间。</p>
   </div>
-  <div class="bs-callout bs-callout-info" ng-controller="MenuController">
+
+<div class="bs-callout bs-callout-info" ng-controller="MenuController">
     <div class="row">
       <div class="col-xs-2">
         <select class="form-control" ng-model="param.game" ng-options="o.id as o.gameName for o in menu_game">
@@ -61,9 +62,7 @@
       </div>
     </div>
   </div>
-  
- 
-  <div  ng-controller="detailController" ng-show="menuState.show">
+<div  ng-controller="detailController" ng-show="menuState.show">
     <div class="panel panel-primary">
       <div class="panel-heading">
         <h3 class="panel-title"></h3>
@@ -174,11 +173,10 @@
     </div>
   </div>
   
-  
-  <div ng-controller="detailController">
+<div ng-controller="tabController">
   <div align="center">
     <div class="btn-group">
-      <button type="button" class="btn btn-default">统计信息</button>
+      <a href="#/table" class="btn btn-default">统计信息</a>
       <button type="button" class="btn btn-default">历史记录</button>
     </div>
   </div>
@@ -188,11 +186,34 @@
   </div>
   
   
+  
+  
+<div ng-controller="MainController">
+  Choose:
+  <a href="Book/Moby">#/Moby</a> |
+  <a href="Book/Moby/ch/1">Moby: Ch1</a> |
+  <a href="Book/Gatsby">Gatsby</a> |
+  <a href="Book/Gatsby/ch/4?key=value">Gatsby: Ch4</a> |
+  <a href="Book/Scarlet">Scarlet Letter</a><br/>
+
   <div ng-view></div>
-  
-  
-  <script>
-    $(function () {
+
+  <hr />
+
+  <pre>$location.path() = {{$location.path()}}</pre>
+  <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
+  <pre>$route.current.params = {{$route.current.params}}</pre>
+  <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
+  <pre>$routeParams = {{$routeParams}}</pre>
+</div>
+
+
+<script>
+	var menu_game = [{id:1001,gameName:'NBA'},{id:1001,gameName:'ck'},{id:1001,gameName:'tf'}];
+var menu_form = [{market:'大陆',value:'1'},{market:'台湾',value:'2'},{market:'海外',value:'3'}];
+var menu_market = [{pf:'IOS',value:1},{pf:'Android',value:2},{pf:'Winphone',value:3}];
+
+$(function () {
     var colors = Highcharts.getOptions().colors,
         categories = ['NBA', 'CK', 'One price', '妖精的尾巴', '死神'],
         name = ' ',
@@ -324,15 +345,7 @@
         }
     })
 
-});			
-
-
-//var menu_time = [2014,2015,2016,2017,2018,2019,2020];
-//var season_time = [{s:'全年',v:0},{s:'第1季度',v:1},{s:'第2季度',v:2},{s:'第3季度',v:3},{s:'第4季度',v:4}];
-var menu_game = [{id:1001,gameName:'NBA'},{id:1001,gameName:'ck'},{id:1001,gameName:'tf'}];
-var menu_form = [{market:'大陆',value:'1'},{market:'台湾',value:'2'},{market:'海外',value:'3'}];
-var menu_market = [{pf:'IOS',value:1},{pf:'Android',value:2},{pf:'Winphone',value:3}];
-
+});	
  jQuery(function () {
             // 时间设置
             jQuery('#starttime').datetimepicker({
@@ -344,8 +357,5 @@ var menu_market = [{pf:'IOS',value:1},{pf:'Android',value:2},{pf:'Winphone',valu
 				dateFormat: "yy-mm-dd"
 			});
         });
-		
-		
-  </script> 
-  <script type="text/javascript" src="<?php echo js_url('js.js');?>"></script>
-  <?php include 'footer.php'?>
+</script>
+<?php include 'footer.php'?>

@@ -17,11 +17,19 @@
 <script type="text/javascript" src='<?php echo js_url('jquery-ui.min.js'); ?>'></script>
 <script type="text/javascript" src='<?php echo js_url('jquery-ui-timepicker-addon.js'); ?>'></script>
 <script type="text/javascript" src='<?php echo js_url('jquery-ui-timepicker-zh-CN.js'); ?>'></script>
-
 <script type="text/javascript" src="<?php echo js_url('highcharts.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('exporting.js'); ?>"></script>
-<script type="text/javascript" src='<?php echo js_url('angular.js'); ?>'></script>
 <script type="text/javascript" src='<?php echo js_url('bootstrap.min.js'); ?>'></script>
+<script type="text/javascript" src='<?php echo js_url('angular.min.js'); ?>'></script>
+<script type="text/javascript" src='<?php echo js_url('angular-route.js'); ?>'></script>
+<script type="text/javascript" src="<?php echo js_url('js.js');?>"></script>
+
+
+  
+  
+<script type="text/javascript">
+    angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+  </script>
 </head>
 <body>
 
