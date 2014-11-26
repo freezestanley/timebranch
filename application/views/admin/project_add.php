@@ -51,7 +51,7 @@
                                     <input type="checkbox" id="project-os" value="Android" name="os[]" <?=set_checkbox('os[]', 'Android')?>> Android
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" id="project-os" value="Window Phone" name="os[]" <?=set_checkbox('os[]', 'Window Phone')?>> Window Phone
+                                    <input type="checkbox" id="project-os" value="Window Phone" name="os[]" <?=set_checkbox('os[]', 'WindowPhone')?>> Window Phone
                                 </label>
                             </div>
                         </div>

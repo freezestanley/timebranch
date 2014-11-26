@@ -34,7 +34,7 @@ class API extends CI_Controller {
         $project_os = $this->input->get('os');
         $project_area = $this->input->get('area');
         $project_startime = $this->input->get('startime');
-        $project_deadtime = $this->input->get('deadtime');
+        $project_deadtime = $this->input->get('endtime');
         $page = $this->input->get('p');
         if (empty($page)) {
             $page = 1;
@@ -61,7 +61,7 @@ class API extends CI_Controller {
                 $_node = array('nid' => $project->nid,
                                'remark' => $project->n_remark,
                                'update_remark' => $project->u_remark,
-                               // 'tid' => $project->tid,
+                               'type_id' => $project->tid,
                                'type' => $project->n_type,
                                'deadline' => $project->deadline_time,
                                'updatetime' => $project->update_time,
@@ -71,7 +71,7 @@ class API extends CI_Controller {
                 $_node = array('nid' => $project->nid,
                                'remark' => $project->n_remark,
                                'update_remark' => $project->u_remark,
-                               // 'tid' => $project->tid,
+                               'type_id' => $project->tid,
                                'type' => $project->n_type,
                                'deadline' => $project->deadline_time,
                                'updatetime' => $project->update_time,
@@ -93,6 +93,7 @@ class API extends CI_Controller {
                                               'operator'=>$project->operator,
                                               'apply'=>$project->apply,
                                               'remark'=>$project->p_remark,
+                                              'pid'=>$project->pid,
                                               );
             }
         }
