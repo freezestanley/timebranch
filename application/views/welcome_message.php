@@ -40,7 +40,7 @@
       <div class="row">
         <div class="col-xs-2">
           <!--<select class="form-control" ng-model="time" ng-options="y for y in times">
-          </select>-->
+          </select>-->{{Tt | titleCase}}{{myDate}}
         </div>
         <nav>
           <ul class="pagination total_num">
@@ -50,7 +50,7 @@
       </div>
       <div>
         <div class="panel panel-default">
-          <div class="panel-body"> Basic panel example </div>
+          <div class="panel-body"></div>
         </div>
         <div class="panel panel-default">
           <div class="panel-body"> Basic panel example </div>
@@ -62,8 +62,7 @@
     </div>
   </div>
   
-  
-  <div ng-view></div>
+ 
   <div  ng-controller="detailController" ng-show="menuState.show">
     <div class="panel panel-primary">
       <div class="panel-heading">
@@ -174,6 +173,9 @@
       </div>
     </div>
   </div>
+  
+  
+  <div ng-controller="detailController">
   <div align="center">
     <div class="btn-group">
       <button type="button" class="btn btn-default">统计信息</button>
@@ -181,7 +183,12 @@
     </div>
   </div>
   
-    <div id="container" style="min-width:700px;height:400px"></div>
+    <div id="container" style="min-width:700px;height:400px" ng-show="showCtl.tab_show"></div>
+  
+  </div>
+  
+  
+  <div ng-view></div>
   
   
   <script>

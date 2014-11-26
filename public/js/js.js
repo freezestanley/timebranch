@@ -1,6 +1,30 @@
 // JavaScript Document
 
 var gametool = angular.module('gameTool',[])
+.config(
+	function($provide){
+		$provide.provider('age',function(){
+			this.$get = function(){
+				return 123;
+			};	
+		});
+		
+		$provide.factory('myDate',function(){
+			return new Date();	
+		});
+		$provide.service('myDate',Date);	
+		$provide.value('pageCount',7);
+		$provide.constant('pageCurrent',1);
+	},
+	['$routeProvider',function($routeProvider){
+		$routeProvider
+		.when('/list',{
+				templateUrl:'list.html',
+				controller:'listControl'
+			})
+		.when
+	}]
+)
 .controller(
 	"MenuController",function ($scope){
 							$scope.param = {};
@@ -25,15 +49,27 @@ var gametool = angular.module('gameTool',[])
 						})
 .controller(
 	"detailController",function detailController($scope){
-							
-							$scope.menuState={'show':false};
+							$scope.menuState={show:false};
 						})
 .controller(
-	"totalController",function totalController($scope){
-							//$scope.month = [1,2,3,4,5,6,7,8,9,10,11,12];
-							//$scope.times = menu_time;
-							//$scope.time=menu_time[0];
-							//$scope.param = {};
-							
-						});
+	"totalController",function totalController($scope,age,myDate){
+							$scope.myDate = myDate;
+							$scope.Tt = 'adad dadsfas das fff';
+						})
+.controller(
+	"tabController",function tabController($scope){
+		$scope.showCtl={tab_show:false};
+	})
+.filter('titleCase',function(){
+	var titleCaseFilter = function(input){
+			var words = input.split(' ');
+			for(var i=0;i<words.length;i++){
+				words[i] = words[i].charAt(0).toUpperCase()+words[i].slice(1);
+			};
+			return words.join(" ");
+		};	
+		return titleCaseFilter;
+});
+						
+
 						
