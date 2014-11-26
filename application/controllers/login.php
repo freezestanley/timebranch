@@ -30,7 +30,7 @@ class Login extends CI_Controller {
                                                'email' => $email,
                                                'logged_in' => TRUE);
             $this->session->set_userdata($user);
-            redirect('/project', 'location', 301);
+            redirect('/', 'location', 301);
 
         }
     }
