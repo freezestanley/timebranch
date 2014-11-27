@@ -86,11 +86,24 @@ angular.module('gameTool', ['ngRoute'])
  })
  
  .controller("tabController",function tabController($scope){
-		$scope.showCtl={tab_show:true};
+		$scope.showCtl={tab_show:false,tab_show2:false};//,
+		$scope.show_ctl = function(target){
+			var s = target.target.getAttribute("data-name");
+			//alert(s);
+			//var s = target.getAttribute("data-name");
+			if(s == "table"){
+				$scope.showCtl.tab_show = true;
+				$scope.showCtl.tab_show2 = false;
+			}else{
+				$scope.showCtl.tab_show = false;
+				$scope.showCtl.tab_show2 = true;
+			};
+		};
 })
 
 .controller("totalController",function totalController($scope){
 		//$scope.myDate = myDate;
+		$scope.detail_info = task_event;
 		$scope.Tt = 'adad dadsfas das fff';
 })
 
@@ -105,7 +118,7 @@ angular.module('gameTool', ['ngRoute'])
 		$scope.menu_market = menu_market
 		$scope.menu_platform = menu_form;
 		var change = function(){
-			alert('param:'+$scope.param);
+			//alert('param:'+$scope.param);
 		};
 		$scope.$watch('param', change, true);
 						})
