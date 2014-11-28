@@ -236,8 +236,8 @@
 
 <script>
 var menu_game = [{id:1001,gameName:'NBA'},{id:1001,gameName:'ck'},{id:1001,gameName:'tf'}];
-var menu_form = ['TW','CN'];
-var menu_market = ['ios','android','winphone'];
+var menu_form = ['IOS（越狱）', 'IOS（正版）', 'IOS', 'ANDROID','WindowPhone'];
+var menu_market = ['TW','CN'];
 var day_table = '<?=site_url() . "api/filter"?>';
 var pop_url = 'timeline/api/history?nid=';
 var game_name_url = '<?=site_url() . "api/get_projects"?>';
@@ -448,7 +448,7 @@ var ztime;
             // 时间设置
             jQuery('#starttime').datetimepicker({
                 dateFormat: "yy-mm-dd",
-				
+
         				onClose:function(time){
                   $('#endtime').datepicker( "option", "minDate", time );
         				}

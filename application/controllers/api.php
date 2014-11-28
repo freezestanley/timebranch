@@ -66,11 +66,12 @@ class API extends CI_Controller {
         foreach ($projects as $project) {
             // $stime = date('Y-m-d', $project->n_addtime);
             // 实际数据可能没有 node 只有 project
-            if (empty($project->update_time)) {
-              $stime = $project->deadline_time;
-            } else {
-              $stime = $project->update_time;
-            }
+            // if (empty($project->update_time)) {
+            //   $stime = $project->deadline_time;
+            // } else {
+            //   $stime = $project->update_time;
+            // }
+            $stime = $project->update_time;
             $mtime = $stime;
             if (empty($project->node_id)) {
               continue;

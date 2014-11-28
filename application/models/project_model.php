@@ -91,6 +91,9 @@ class Project_model extends CI_Model {
             $sql .= " and update_time <= '" . $condition['deadtime'] . "'";
         }
 
+        echo $sql;
+        exit;
+
         $query = $this->db->query($sql);
         return $query->result();
     }
