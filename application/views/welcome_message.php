@@ -4,7 +4,8 @@
     <p class="lead">展示各个游戏项目的上线时间。<br>
       便于公司各相关部门了解各个项目的时间安排，任务上线和结束时间。</p>
   </div>
-  <div class="bs-callout bs-callout-info" ng-controller="MenuController">
+
+<div class="bs-callout bs-callout-info" ng-controller="MenuController">
     <div class="row">
       <div class="col-xs-2">
         <select class="form-control" ng-model="param.game" ng-options="o.id as o.gameName for o in menu_game">
@@ -37,302 +38,398 @@
   
   <div class="tab_zone">
     <div class="well" ng-controller="totalController">
-      <div class="row">
+      <!--<div class="row">
         <div class="col-xs-2">
-          <!--<select class="form-control" ng-model="time" ng-options="y for y in times">
-          </select>-->{{Tt | titleCase}}{{myDate}}
+          <select class="form-control" ng-model="time" ng-options="y for y in times">
+          </select>
+          {{Tt | titleCase}}{{myDate}}
         </div>
         <nav>
           <ul class="pagination total_num">
             <li ng-repeat = "m in month"><a href="#">{{m}}</a></li>
           </ul>
         </nav>
-      </div>
+      </div>-->
       <div>
-        <div class="panel panel-default">
-          <div class="panel-body"></div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-body"> Basic panel example </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-body"> Basic panel example </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
- 
-  <div  ng-controller="detailController" ng-show="menuState.show">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title"></h3>
-      </div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <div class="caption">
-                <h3>NBA 官网上线</h3>
-                <div>
-                  <table>
-                    <tr>
-                      <td>平台：</td>
-                      <td>Android</td>
-                    </tr>
-                    <tr>
-                      <td>市场：</td>
-                      <td>大陆</td>
-                    </tr>
-                    <tr>
-                      <td>开始：</td>
-                      <td>2014-09-01</td>
-                    </tr>
-                    <tr>
-                      <td>结束：</td>
-                      <td>2014-09-01</td>
-                    </tr>
-                      </tr>
-                    
-                  </table>
-                  <div class="cap_title">项目进度：</div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"> 60% </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <div class="caption">
-                <h3>NBA 官网上线</h3>
-                <div>
-                  <table>
-                    <tr>
-                      <td>平台：</td>
-                      <td>Android</td>
-                    </tr>
-                    <tr>
-                      <td>市场：</td>
-                      <td>大陆</td>
-                    </tr>
-                    <tr>
-                      <td>开始：</td>
-                      <td>2014-09-01</td>
-                    </tr>
-                    <tr>
-                      <td>结束：</td>
-                      <td>2014-09-01</td>
-                    </tr>
-                      </tr>
-                    
-                  </table>
-                  <div class="cap_title">项目进度：</div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"> 60% </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <div class="caption">
-                <h3>NBA 官网上线</h3>
-                <div>
-                  <table>
-                    <tr>
-                      <td>平台：</td>
-                      <td>Android</td>
-                    </tr>
-                    <tr>
-                      <td>市场：</td>
-                      <td>大陆</td>
-                    </tr>
-                    <tr>
-                      <td>开始：</td>
-                      <td>2014-09-01</td>
-                    </tr>
-                    <tr>
-                      <td>结束：</td>
-                      <td>2014-09-01</td>
-                    </tr>
-                      </tr>
-                    
-                  </table>
-                  <div class="cap_title">项目进度：</div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"> 60% </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="panel panel-default" ng-repeat="d in detail_info">
+          <div class="panel-body">
+          {{d.day}}
+          <table width="100%" class="p_table">
+          	<thead><tr><td>项目节点</td><td>项目名称</td><td>市场</td><td>平台</td><td>历史</td></tr></thead>
+            <tbody><tr ng-repeat="task in d.task"><td>{{task.point}}</td><td>{{task.gname}}</td><td>{{task.market}}</td><td>{{task.pf}}</td><td><a href="#">历史</a></td></tr></tbody>
+          </table>
+          	
           </div>
         </div>
       </div>
     </div>
   </div>
+
   
   
-  <div ng-controller="detailController">
-  <div align="center">
+  
+  
+  <div class="gantt"></div>
+  
+  
+  
+  
+  
+<div ng-controller="tabController">
+  <div align="center" style="margin-bottom:30px;">
     <div class="btn-group">
-      <button type="button" class="btn btn-default">统计信息</button>
-      <button type="button" class="btn btn-default">历史记录</button>
+      <a href="javascript:;" class="btn btn-default" data-name ="table" ng-click="show_ctl($event)">统计信息</a>
+     <!-- <button type="button" class="btn btn-default">历史记录</button>-->
+      <a href="javascript:;" class="btn btn-default" data-name = "block" ng-click="show_ctl($event)">XXXX</a>
     </div>
   </div>
   
-    <div id="container" style="min-width:700px;height:400px" ng-show="showCtl.tab_show"></div>
+    <div id="container" style="width:940px;height:400px;" ng-show="showCtl.tab_show"></div>
+	
+    <div ng-show="showCtl.tab_show2">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"></h3>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <div class="caption">
+                    <h3>NBA 官网上线</h3>
+                    <div>
+                      <table>
+                        <tr>
+                          <td>平台：</td>
+                          <td>Android</td>
+                        </tr>
+                        <tr>
+                          <td>市场：</td>
+                          <td>大陆</td>
+                        </tr>
+                        <tr>
+                          <td>开始：</td>
+                          <td>2014-09-01</td>
+                        </tr>
+                        <tr>
+                          <td>结束：</td>
+                          <td>2014-09-01</td>
+                        </tr>
+                          </tr>
+                        
+                      </table>
+                      <div class="cap_title">项目进度：</div>
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"> 60% </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <div class="caption">
+                    <h3>NBA 官网上线</h3>
+                    <div>
+                      <table>
+                        <tr>
+                          <td>平台：</td>
+                          <td>Android</td>
+                        </tr>
+                        <tr>
+                          <td>市场：</td>
+                          <td>大陆</td>
+                        </tr>
+                        <tr>
+                          <td>开始：</td>
+                          <td>2014-09-01</td>
+                        </tr>
+                        <tr>
+                          <td>结束：</td>
+                          <td>2014-09-01</td>
+                        </tr>
+                          </tr>
+                        
+                      </table>
+                      <div class="cap_title">项目进度：</div>
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"> 60% </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <div class="caption">
+                    <h3>NBA 官网上线</h3>
+                    <div>
+                      <table>
+                        <tr>
+                          <td>平台：</td>
+                          <td>Android</td>
+                        </tr>
+                        <tr>
+                          <td>市场：</td>
+                          <td>大陆</td>
+                        </tr>
+                        <tr>
+                          <td>开始：</td>
+                          <td>2014-09-01</td>
+                        </tr>
+                        <tr>
+                          <td>结束：</td>
+                          <td>2014-09-01</td>
+                        </tr>
+                          </tr>
+                        
+                      </table>
+                      <div class="cap_title">项目进度：</div>
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"> 60% </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+   </div>
+   
+   
+   
+</div>
   
-  </div>
   
   
+  
+<!--<div ng-controller="MainController">
+  Choose:
+  <a href="Book/Moby">#/Moby</a> |
+  <a href="Book/Moby/ch/1">Moby: Ch1</a> |
+  <a href="Book/Gatsby">Gatsby</a> |
+  <a href="Book/Gatsby/ch/4?key=value">Gatsby: Ch4</a> |
+  <a href="Book/Scarlet">Scarlet Letter</a><br/>
+
   <div ng-view></div>
-  
-  
-  <script>
-    $(function () {
-    var colors = Highcharts.getOptions().colors,
-        categories = ['NBA', 'CK', 'One price', '妖精的尾巴', '死神'],
-        name = ' ',
-        data = [{
-                y: 5,
-                color: colors[0],
-                drilldown: {
-                    name: 'MSIE versions',
-                    categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9.0'],
-                    data: [10.85, 7.35, 33.06, 2.81],
-                    color: colors[0]
-                }
-            }, {
-                y: 30,
-                color: colors[1],
-                drilldown: {
-                    name: 'Firefox versions',
-                    categories: ['Firefox 2.0', 'Firefox 3.0', 'Firefox 3.5', 'Firefox 3.6', 'Firefox 4.0'],
-                    data: [0.20, 0.83, 1.58, 13.12, 5.43],
-                    color: colors[1]
-                }
-            }, {
-                y: 30,
-                color: colors[2],
-                drilldown: {
-                    name: 'Chrome versions',
-                    categories: ['Chrome 5.0', 'Chrome 6.0', 'Chrome 7.0', 'Chrome 8.0', 'Chrome 9.0',
-                        'Chrome 10.0', 'Chrome 11.0', 'Chrome 12.0'],
-                    data: [0.12, 0.19, 0.12, 0.36, 0.32, 9.91, 0.50, 0.22],
-                    color: colors[2]
-                }
-            }, {
-                y: 30,
-                color: colors[3],
-                drilldown: {
-                    name: 'Safari versions',
-                    categories: ['Safari 5.0', 'Safari 4.0', 'Safari Win 5.0', 'Safari 4.1', 'Safari/Maxthon',
-                        'Safari 3.1', 'Safari 4.1'],
-                    data: [4.55, 1.42, 0.23, 0.21, 0.20, 0.19, 0.14],
-                    color: colors[3]
-                }
-            }, {
-                y: 30,
-                color: colors[4],
-                drilldown: {
-                    name: 'Opera versions',
-                    categories: ['Opera 9.x', 'Opera 10.x', 'Opera 11.x'],
-                    data: [ 0.12, 0.37, 1.65],
-                    color: colors[4]
-                }
-            }];
 
-    function setChart(name, categories, data, color) {
-	chart.xAxis[0].setCategories(categories, false);
-	chart.series[0].remove(false);
-	chart.addSeries({
-		name: name,
-		data: data,
-		color: color || 'white'
-	}, false);
-	chart.redraw();
-    }
+  <hr />
 
-    var chart = $('#container').highcharts({
-        chart: {
-            type: 'column'
-        },
-        title: {
-            text: '2014年7月 游戏任务'
-        },
-        subtitle: {
-            text: '点击柱状图察看详情'
-        },
-        xAxis: {
-            categories: categories
-        },
-        yAxis: {
-            title: {
-                text: '游戏任务数量'
-            }
-        },
-        plotOptions: {
-            column: {
-                cursor: 'pointer',
-                point: {
-                    events: {
-                        click: function() {
-                            var drilldown = this.drilldown;
-                            if (drilldown) { // drill down
-                                setChart(drilldown.name, drilldown.categories, drilldown.data, drilldown.color);
-                            } else { // restore
-                                //setChart(name, categories, data);
-								//alert('fffffffffffff');
-                            }
-                        }
-                    }
-                },
-                dataLabels: {
-                    enabled: true,
-                    color: colors[0],
-                    style: {
-                        fontWeight: 'bold'
-                    },
-                    formatter: function() {
-                        return this.y+'个';
-                    }
-                }
-            }
-        },
-        tooltip: {
-            formatter: function() {
-                var point = this.point,
-                    s = this.x +':<b>'+ this.y +' market share</b><br/>';
-                if (point.drilldown) {
-                    s += 'Click to view '+ point.category +' versions';
-                } else {
-                    s += 'Click to return to browser brands';
-                }
-                return s;
-            }
-        },
-        series: [{
-            name: name,
-            data: data,
-            color: 'white'
-        }],
-        exporting: {
-            enabled: false
-        }
-    })
-
-});			
+  <pre>$location.path() = {{$location.path()}}</pre>
+  <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
+  <pre>$route.current.params = {{$route.current.params}}</pre>
+  <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
+  <pre>$routeParams = {{$routeParams}}</pre>
+</div>-->
 
 
-//var menu_time = [2014,2015,2016,2017,2018,2019,2020];
-//var season_time = [{s:'全年',v:0},{s:'第1季度',v:1},{s:'第2季度',v:2},{s:'第3季度',v:3},{s:'第4季度',v:4}];
+<script>
 var menu_game = [{id:1001,gameName:'NBA'},{id:1001,gameName:'ck'},{id:1001,gameName:'tf'}];
 var menu_form = [{market:'大陆',value:'1'},{market:'台湾',value:'2'},{market:'海外',value:'3'}];
 var menu_market = [{pf:'IOS',value:1},{pf:'Android',value:2},{pf:'Winphone',value:3}];
 
+var task_event = [{day:'2014-01-10',
+				   task:[{stime:'2014-01-10',mtime:'2014-02-02',gname:'NBA',reason:'修改理由',market:'大陆',pf:'Android',point:'CBT1'},
+  						 {stime:'2014-01-10',mtime:'2014-02-02',gname:'ck',reason:'修改理由',market:'台湾',pf:'Android',point:'CBT1'},
+						 {stime:'2014-01-10',mtime:'2014-02-02',gname:'TF',reason:'修改理由',market:'大陆',pf:'Winphone',point:'CBT1'}
+						]					 
+				  },
+				  {day:'2014-01-11',
+				   task:[{stime:'2014-01-12',mtime:'2014-02-02',gname:'NBA',reason:'修改理由',market:'台湾',pf:'Ios',point:'CBT1'},
+  						 {stime:'2014-01-12',mtime:'2014-02-02',gname:'NBA',reason:'修改理由',market:'台湾',pf:'Ios',point:'CBT1'},
+						 {stime:'2014-01-12',mtime:'2014-02-02',gname:'TF',reason:'修改理由',market:'大陆',pf:'Winphone',point:'CBT1'}
+						]					 
+				  },
+				  {day:'2014-01-12',
+				   task:[{stime:'2014-01-13',mtime:'2014-02-01',gname:'NBA',reason:'修改理由',market:'大陆',pf:'Android',point:'CBT1'},
+  						 {stime:'2014-01-14',mtime:'2014-02-14',gname:'ck',reason:'修改理由',market:'台湾',pf:'Ios',point:'CBT1'},
+						 {stime:'2014-01-11',mtime:'2014-02-15',gname:'ck',reason:'修改理由',market:'大陆',pf:'Winphone',point:'CBT1'}
+						]					 
+				  },
+				 ];
+				 
+var date_array = [{
+				name: 'Tokyo',
+				data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
+			}, {
+				name: 'London',
+				data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8],
+			}];
+
+$(function () {	
+
+		$(".gantt").gantt({
+				source: [{
+					name: "Sprint 0",
+					desc: "Analysis",
+					values: [{
+						id: "t01",
+						from: "/Date(1320192000000)/",
+						to: "/Date(1322401600000)/",
+						label: "Requirement Gathering", 
+						customClass: "ganttRed",
+						desc: "aa"
+					}]
+				},{
+					name: " ",
+					desc: "Scoping",
+					values: [{
+						id: "t02",
+						from: "/Date(1322611200000)/",
+						to: "/Date(1323302400000)/",
+						label: "Scoping", 
+						customClass: "ganttRed",
+						dep: "t01",
+						desc: "bb"
+					}]
+				},{
+					name: "Sprint 1",
+					desc: "Development",
+					values: [{
+						from: "/Date(1323802400000)/",
+						to: "/Date(1325685200000)/",
+						label: "Development", 
+						customClass: "ganttGreen",
+						desc: "cc"
+					}]
+				},{
+					name: " ",
+					desc: "Showcasing",
+					values: [{
+						from: "/Date(1325685200000)/",
+						to: "/Date(1325695200000)/",
+						label: "Showcasing", 
+						customClass: "ganttBlue",
+						desc: "dd"
+					}]
+				},{
+					name: "Sprint 2",
+					desc: "Development",
+					values: [{
+						from: "/Date(1326785200000)/",
+						to: "/Date(1325785200000)/",
+						label: "Development", 
+						customClass: "ganttGreen",
+						desc: "ee"
+					}]
+				},{
+					name: " ",
+					desc: "Showcasing",
+					values: [{
+						from: "/Date(1328785200000)/",
+						to: "/Date(1328905200000)/",
+						label: "Showcasing", 
+						customClass: "ganttBlue",
+						desc: "ff"
+					}]
+				},{
+					name: "Release Stage",
+					desc: "Training",
+					values: [{
+						from: "/Date(1330011200000)/",
+						to: "/Date(1336611200000)/",
+						label: "Training", 
+						customClass: "ganttOrange",
+						desc: "gg"
+					}]
+				},{
+					name: " ",
+					desc: "Deployment",
+					values: [{
+						from: "/Date(1336611200000)/",
+						to: "/Date(1338711200000)/",
+						label: "Deployment", 
+						customClass: "ganttOrange",
+						desc: "hh"
+					}]
+				},{
+					name: " ",
+					desc: "Warranty Period",
+					values: [{
+						from: "/Date(1336611200000)/",
+						to: "/Date(1349711200000)/",
+						label: "Warranty Period", 
+						customClass: "ganttOrange",
+						desc: "ii"
+					}]
+				}],
+				navigate: "scroll",
+				scale: "weeks",
+				maxScale: "months",
+				minScale: "days",
+				itemsPerPage: 10,
+				onItemClick: function(data) {
+					//alert("Item clicked - show some details");
+				},
+				onAddClick: function(dt, rowId) {
+					//alert("Empty space clicked - add an item!");
+				},
+				onRender: function() {
+					if (window.console && typeof console.log === "function") {
+						console.log("chart rendered");
+					}
+				}
+			});
+
+			$(".gantt").popover({
+				selector: ".bar",
+				title: "I'm a popover",
+				content: "And I'm the content of said popover.",
+				trigger: "hover"
+			});
+
+			//
+
+
+
+		$('#container').highcharts({
+			chart: {
+				type: 'line'
+			},
+			title: {
+				text: '任务图表'
+			},
+			subtitle: {
+				text: ' '
+			},
+			xAxis: {
+				categories: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+			},
+			yAxis: {
+				title: {
+					text: '任务数量'
+				}
+			},
+			tooltip: {
+				enabled: true,
+				formatter: function() {
+					return '<b>'+ this.series.name +'</b><br>'+this.x +': '+ this.y +'°C';
+				}
+			},
+			plotOptions: {
+				line: {
+					dataLabels: {
+						enabled: true
+					},
+					enableMouseTracking: true
+				}
+			},
+			series: date_array
+		});
+		
+	function setChart(name, categories, data, color) {
+		chart.xAxis[0].setCategories(categories, false);
+		chart.series[0].remove(false);
+		chart.addSeries({
+			name: name,
+			data: data,
+			color: color || 'white'
+		}, false);
+		chart.redraw();
+    };
+	
+});	
  jQuery(function () {
             // 时间设置
             jQuery('#starttime').datetimepicker({
@@ -344,8 +441,5 @@ var menu_market = [{pf:'IOS',value:1},{pf:'Android',value:2},{pf:'Winphone',valu
 				dateFormat: "yy-mm-dd"
 			});
         });
-		
-		
-  </script> 
-  <script type="text/javascript" src="<?php echo js_url('js.js');?>"></script>
-  <?php include 'footer.php'?>
+</script>
+<?php include 'footer.php'?>
