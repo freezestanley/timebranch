@@ -30,11 +30,11 @@ class API extends CI_Controller {
 
     public function filter()
     {
-        $project_name = $this->input->get('name');
-        $project_os = $this->input->get('os');
-        $project_area = $this->input->get('area');
-        $project_startime = $this->input->get('startime');
-        $project_deadtime = $this->input->get('endtime');
+        $project_name = $this->input->get('gname');
+        $project_os = $this->input->get('pf');
+        $project_area = $this->input->get('market');
+        $project_startime = $this->input->get('stime');
+        $project_deadtime = $this->input->get('mtime');
         $page = $this->input->get('p');
         if (empty($page)) {
             $page = 1;
@@ -48,8 +48,51 @@ class API extends CI_Controller {
                            );
 
         $projects = $this->project->filter($condition);
-        $page_data = $this->_paginate($this->_filter($projects), $page, $per_page=2);
-        $this->json($page_data);
+        // $page_data = $this->_paginate($this->_filter2($projects), $page, $per_page=2);
+        $this->json($this->_filter2($projects));
+    }
+
+    public function _filter2($projects)
+    {
+        $result = array();
+
+        foreach ($projects as $project) {
+            // $stime = date('Y-m-d', $project->n_addtime);
+            $stime = $project->update_time;
+            if (empty($project->node_id)) {
+              continue;
+            }
+            if (isset($result[$stime])) {
+              $_task = array(//'nid' => $project->nid,
+                             'reason' => $project->u_remark,
+                             // 'type_id' => $project->tid,
+                             'point' => $project->n_type,
+                             'pf' => $project->os,
+                             'stime' => $stime,
+                             'mtime' => $project->update_time,
+                             'market' => $project->area,
+                             'gname' => $project->name,
+                             'nid' => $project->node_id);
+              $result[$stime][] = $_task;
+            } else {
+              $_task = array(//'nid' => $project->nid,
+                             'reason' => $project->u_remark,
+                             // 'type_id' => $project->tid,
+                             'point' => $project->n_type,
+                             'pf' => $project->os,
+                             'stime' => $stime,
+                             'mtime' => $project->update_time,
+                             'market' => $project->area,
+                             'gname' => $project->name,
+                             'nid' => $project->node_id);
+              $result[$stime] = array($_task);
+            }
+        }
+        $_temp = array();
+        foreach ($result as $key => $value) {
+            $_temp[] = array('day'=>$key, 'task'=>$value);
+        }
+        return $_temp;
     }
 
     public function _filter($projects)

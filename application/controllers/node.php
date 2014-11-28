@@ -42,7 +42,7 @@ class Node extends MY_Controller {
         {
             $this->load->model('node_model', 'node');
             $this->node->insert($project_id);
-            echo 'ok';
+            redirect(site_url());
         }
     }
 
@@ -75,7 +75,7 @@ class Node extends MY_Controller {
         {
             $this->load->model('update_model', 'update');
             $this->update->insert($node_id);
-            echo 'ok';
+            redirect(site_url());
         }
     }
 
