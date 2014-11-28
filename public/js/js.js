@@ -85,7 +85,7 @@ angular.module('gameTool', ['ngRoute'])
 	$scope.menuState={show:false};
  })
  
- .controller("tabController",function tabController($scope,$http){
+ .controller("tabController",function tabController($scope){
 		$scope.showCtl={tab_show:false,tab_show2:false};//,
 		$scope.show_ctl = function(target){
 			var s = target.target.getAttribute("data-name");
@@ -99,20 +99,17 @@ angular.module('gameTool', ['ngRoute'])
 				$scope.showCtl.tab_show2 = true;
 			};
 		};
-		$http.get('List.html').success(function(data) {
-			alert(data);
-    		$scope.phones = data;
-	   });
+		
 
 })
 
-.controller("totalController",function totalController($scope){
+.controller("totalController",function totalController($scope,$rootScope,$http){
 		//$scope.myDate = myDate;
-		$scope.detail_info = task_event;
+		$scope.detail_info = $rootScope.http;
 		$scope.Tt = 'adad dadsfas das fff';
 })
 
-.controller("MenuController",function ($scope){
+.controller("MenuController",function ($scope,$rootScope,$http){
 		$scope.param = {};
 		$scope.param.game = '';
 		$scope.param.market = '';
@@ -122,12 +119,23 @@ angular.module('gameTool', ['ngRoute'])
 		$scope.menu_game = menu_game;
 		$scope.menu_market = menu_market
 		$scope.menu_platform = menu_form;
+		
+		$http.get(day_table).success(function(data) {
+				//alert();
+    			//$scope.phones = data;
+				if(data['status'] == true){
+					$rootScope.http = data['data'];
+				};
+	   	});
+		
 		var change = function(){
 			//alert('param:'+$scope.param);
+			$http.get(day_table).success(function(data) {
+				$rootScope.http = data['data'];
+	   		});
 		};
 		$scope.$watch('param', change, true);
-						})
-
+})
 .filter('titleCase',function(){
 	var titleCaseFilter = function(input){
 			var words = input.split(' ');
