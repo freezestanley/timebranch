@@ -115,7 +115,7 @@ angular.module('gameTool', ['ngRoute'])
 
 .controller("MenuController",function ($scope,$rootScope,$http){
 		$scope.param = {};
-		$scope.param.game = '-- 请选择 --';
+		$scope.param.game = '';
 		$scope.param.market = '';
 		$scope.param.platform = '';
 		$scope.param.endtime = new Date().getFullYear()+'-'+new Date().getMonth()+'-'+new Date().getDate();
