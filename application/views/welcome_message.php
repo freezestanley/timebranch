@@ -444,7 +444,13 @@ $(function () {
             // 时间设置
             jQuery('#starttime').datetimepicker({
                // timeFormat: "HH:mm:ss",
-                dateFormat: "yy-mm-dd"
+                dateFormat: "yy-mm-dd",
+				change:function(time){
+					var element = $(this),text;
+					var timepicker = element.timepicker();
+					text = 'Selected time is: ' + timepicker.format(time);
+            		element.siblings('#starttime').text(text); 
+				}
             });
 			jQuery('#endtime').datetimepicker({
 				//timeFormat: "HH:mm:ss",
