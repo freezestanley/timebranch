@@ -104,13 +104,13 @@ angular.module('gameTool', ['ngRoute'])
 })
 
 .controller("totalController",function totalController($scope,$rootScope,$http){
-		//$scope.myDate = myDate;
-		
-		//$scope.Tt = 'adad dadsfas das fff';
 		var root_change = function(){
 			$scope.detail_info = $rootScope.http;
 		};
 		$rootScope.$watch('http',root_change);
+		$scope.showpop = function(){
+			
+		};
 })
 
 .controller("MenuController",function ($scope,$rootScope,$http){
@@ -133,7 +133,9 @@ angular.module('gameTool', ['ngRoute'])
 	   	});
 		
 		var change = function(){
-			//alert('param:'+$scope.param);
+			alert('param:'+$scope.param);
+			var sss = $($scope.param).serialize();
+			var query = day_table+"?"+sss;
 			$http.get(day_table).success(function(data) {
 				$rootScope.http = data['data'];
 	   		});

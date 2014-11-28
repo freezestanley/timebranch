@@ -13,13 +13,15 @@
         </select>
       </div>
       <div class="col-xs-2">
-        <select class="form-control" ng-model="param.market" ng-options="m.value as m.pf for m in menu_market">
+        <select class="form-control" ng-model="param.market" ><!--ng-options="for m in menu_market">-->
           <option value="">-- 请选择 --</option>
+          <option ng-repeat="m in menu_market" value="{{m}}">{{m}}</option>
         </select>
       </div>
       <div class="col-xs-2">
-        <select class="form-control"  ng-model="param.platform" ng-options="p.market for p in menu_platform">
+        <select class="form-control"  ng-model="param.platform"> <!--ng-options="for p in menu_platform">-->
           <option value="">-- 请选择 --</option>
+          <option ng-repeat="p in menu_platform" value="{{p}}">{{p}}</option>
         </select>
       </div>
       <div class="col-xs-2">
@@ -53,9 +55,17 @@
       <div>
         <div class="panel panel-default" ng-repeat="d in detail_info">
           <div class="panel-body">
-
+			{{d.day}}
           <table width="100%" class="p_table">
-          	  <tbody><tr ng-repeat="task in d.task"><td>{{task.point}}</td><td>{{task.gname}}</td><td>{{task.market}}</td><td>{{task.pf}}</td><td><a href="#">历史</a></td></tr></tbody>
+          	  <tbody>
+              <tr ng-repeat="task in d.task">
+              <td>{{task.gname}}</td>
+              <td>{{task.point}}</td>
+              <td>{{task.market}}</td>
+              <td>{{task.pf}}</td>
+              <td><a href="javascript:;" ng-click="showpop({{task.nid}});">历史</a></td>
+              </tr>
+              </tbody>
           </table>
 
           </div>
@@ -225,9 +235,10 @@
 
 <script>
 var menu_game = [{id:1001,gameName:'NBA'},{id:1001,gameName:'ck'},{id:1001,gameName:'tf'}];
-var menu_form = [{market:'大陆',value:'1'},{market:'台湾',value:'2'},{market:'海外',value:'3'}];
-var menu_market = [{pf:'IOS',value:1},{pf:'Android',value:2},{pf:'Winphone',value:3}];
+var menu_form = ['TW','CN'];
+var menu_market = ['ios','android','winphone'];
 var day_table = '<?=site_url() . "api/filter"?>';
+var pop_url = 'timeline/api/history?nid=';
 var task_event = [{day:'2014-01-10',
 				   task:[{stime:'2014-01-10',mtime:'2014-02-02',gname:'NBA',reason:'修改理由',market:'大陆',pf:'Android',point:'CBT1'},
   						 {stime:'2014-01-10',mtime:'2014-02-02',gname:'ck',reason:'修改理由',market:'台湾',pf:'Android',point:'CBT1'},
