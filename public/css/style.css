@@ -42,6 +42,6 @@ border-left-color:#1C67AC;
 .tab_zone{ margin-top:20px;}
 .pagination.total_num{margin: 0 0;}
 
-.p_table td{ text-align:center; line-height:30px; height:30px;}
+.p_table td{ text-align:center; line-height:30px; height:30px;width:20%;}
 .p_table tbody tr:nth-child(odd) td{ background:#efefef;}
 .well{ height:500px; overflow-y:scroll;}
