@@ -65,7 +65,13 @@ class API extends CI_Controller {
 
         foreach ($projects as $project) {
             // $stime = date('Y-m-d', $project->n_addtime);
-            $stime = $project->update_time;
+            // 实际数据可能没有 node 只有 project
+            if (empty($project->update_time)) {
+              $stime = $project->deadline_time;
+            } else {
+              $stime = $project->update_time;
+            }
+            $mtime = $stime;
             if (empty($project->node_id)) {
               continue;
             }
@@ -76,7 +82,7 @@ class API extends CI_Controller {
                              'point' => $project->n_type,
                              'pf' => $project->os,
                              'stime' => $stime,
-                             'mtime' => $project->update_time,
+                             'mtime' => $mtime,
                              'market' => $project->area,
                              'gname' => $project->name,
                              'nid' => $project->node_id);
@@ -88,7 +94,7 @@ class API extends CI_Controller {
                              'point' => $project->n_type,
                              'pf' => $project->os,
                              'stime' => $stime,
-                             'mtime' => $project->update_time,
+                             'mtime' => $mtime,
                              'market' => $project->area,
                              'gname' => $project->name,
                              'nid' => $project->node_id);
