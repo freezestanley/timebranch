@@ -443,20 +443,18 @@ $(function () {
  jQuery(function () {
             // 时间设置
             jQuery('#starttime').datetimepicker({
-               // timeFormat: "HH:mm:ss",
                 dateFormat: "yy-mm-dd",
-				minTime:'2015-11-11',
-				change:function(time){
-					var element = $(this),text;
-					var timepicker = element.timepicker();
-					text = 'Selected time is: ' + timepicker.format(time);
-            		element.siblings('#starttime').text(text); 
-				}
+        				onClose:function(time){
+                  $('#endtime').datepicker( "option", "minDate", time );
+        				}
             });
-			jQuery('#endtime').datetimepicker({
-				//timeFormat: "HH:mm:ss",
-				dateFormat: "yy-mm-dd"
-			});
+      			jQuery('#endtime').datetimepicker({
+      				//timeFormat: "HH:mm:ss",
+      				dateFormat: "yy-mm-dd",
+              onClose:function(time){
+                  $('#starttime').datepicker( "option", "maxDate", time );
+                }
+      			});
         });
 </script>
 <?php include 'footer.php'?>
