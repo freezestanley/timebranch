@@ -124,6 +124,14 @@ angular.module('gameTool', ['ngRoute'])
 		$scope.menu_market = menu_market
 		$scope.menu_platform = menu_form;
 		
+		$http.get(game_name_url).success(function(data) {
+				//alert();
+    			//$scope.phones = data;
+				if(data['status'] == true){
+					$scope.menu_game = data['data'];
+				};
+	   	});
+		
 		$http.get(day_table).success(function(data) {
 				//alert();
     			//$scope.phones = data;

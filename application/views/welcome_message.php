@@ -8,7 +8,7 @@
 <div class="bs-callout bs-callout-info" ng-controller="MenuController">
     <div class="row">
       <div class="col-xs-2">
-        <select class="form-control" ng-model="param.game" ng-options="o.id as o.gameName for o in menu_game">
+        <select class="form-control" ng-model="param.game" ng-options="o.id as o.name for o in menu_game">
           <option value="">-- 请选择 --</option>
         </select>
       </div>
@@ -239,6 +239,8 @@ var menu_form = ['TW','CN'];
 var menu_market = ['ios','android','winphone'];
 var day_table = '<?=site_url() . "api/filter"?>';
 var pop_url = 'timeline/api/history?nid=';
+var game_name_url = '<?=site_url() . "timeline/api/get_projects"?>';
+
 var task_event = [{day:'2014-01-10',
 				   task:[{stime:'2014-01-10',mtime:'2014-02-02',gname:'NBA',reason:'修改理由',market:'大陆',pf:'Android',point:'CBT1'},
   						 {stime:'2014-01-10',mtime:'2014-02-02',gname:'ck',reason:'修改理由',market:'台湾',pf:'Android',point:'CBT1'},
