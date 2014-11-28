@@ -105,8 +105,12 @@ angular.module('gameTool', ['ngRoute'])
 
 .controller("totalController",function totalController($scope,$rootScope,$http){
 		//$scope.myDate = myDate;
-		$scope.detail_info = $rootScope.http;
-		$scope.Tt = 'adad dadsfas das fff';
+		
+		//$scope.Tt = 'adad dadsfas das fff';
+		var root_change = function(){
+			$scope.detail_info = $rootScope.http;
+		};
+		$rootScope.$watch('http',root_change);
 })
 
 .controller("MenuController",function ($scope,$rootScope,$http){
