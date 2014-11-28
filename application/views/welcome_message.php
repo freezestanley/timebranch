@@ -239,7 +239,7 @@ var menu_form = ['TW','CN'];
 var menu_market = ['ios','android','winphone'];
 var day_table = '<?=site_url() . "api/filter"?>';
 var pop_url = 'timeline/api/history?nid=';
-var game_name_url = '<?=site_url() . "timeline/api/get_projects"?>';
+var game_name_url = '<?=site_url() . "api/get_projects"?>';
 
 var task_event = [{day:'2014-01-10',
 				   task:[{stime:'2014-01-10',mtime:'2014-02-02',gname:'NBA',reason:'修改理由',market:'大陆',pf:'Android',point:'CBT1'},
