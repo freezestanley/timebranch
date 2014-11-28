@@ -445,6 +445,7 @@ $(function () {
             jQuery('#starttime').datetimepicker({
                // timeFormat: "HH:mm:ss",
                 dateFormat: "yy-mm-dd",
+				minTime:'2015-11-11',
 				change:function(time){
 					var element = $(this),text;
 					var timepicker = element.timepicker();
