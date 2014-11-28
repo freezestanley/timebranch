@@ -34,8 +34,8 @@
       </div>
     </div>
   </div>
-  
-  
+
+
   <div class="tab_zone">
     <div class="well" ng-controller="totalController">
       <!--<div class="row">
@@ -57,23 +57,23 @@
           <table width="100%" class="p_table">
           	  <tbody><tr ng-repeat="task in d.task"><td>{{task.point}}</td><td>{{task.gname}}</td><td>{{task.market}}</td><td>{{task.pf}}</td><td><a href="#">历史</a></td></tr></tbody>
           </table>
-          	
+
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  
-  
-  
-  
+
+
+
+
   <div class="gantt"></div>
-  
-  
-  
-  
-  
+
+
+
+
+
 <div ng-controller="tabController">
   <div align="center" style="margin-bottom:30px;">
     <div class="btn-group">
@@ -82,9 +82,9 @@
       <a href="javascript:;" class="btn btn-default" data-name = "block" ng-click="show_ctl($event)">XXXX</a>
     </div>
   </div>
-  
+
     <div id="container" style="width:940px;height:400px;" ng-show="showCtl.tab_show"></div>
-	
+
     <div ng-show="showCtl.tab_show2">
         <div class="panel panel-primary">
           <div class="panel-heading">
@@ -115,7 +115,7 @@
                           <td>2014-09-01</td>
                         </tr>
                           </tr>
-                        
+
                       </table>
                       <div class="cap_title">项目进度：</div>
                       <div class="progress">
@@ -148,7 +148,7 @@
                           <td>2014-09-01</td>
                         </tr>
                           </tr>
-                        
+
                       </table>
                       <div class="cap_title">项目进度：</div>
                       <div class="progress">
@@ -181,7 +181,7 @@
                           <td>2014-09-01</td>
                         </tr>
                           </tr>
-                        
+
                       </table>
                       <div class="cap_title">项目进度：</div>
                       <div class="progress">
@@ -195,14 +195,14 @@
           </div>
         </div>
    </div>
-   
-   
-   
+
+
+
 </div>
-  
-  
-  
-  
+
+
+
+
 <!--<div ng-controller="MainController">
   Choose:
   <a href="Book/Moby">#/Moby</a> |
@@ -227,27 +227,27 @@
 var menu_game = [{id:1001,gameName:'NBA'},{id:1001,gameName:'ck'},{id:1001,gameName:'tf'}];
 var menu_form = [{market:'大陆',value:'1'},{market:'台湾',value:'2'},{market:'海外',value:'3'}];
 var menu_market = [{pf:'IOS',value:1},{pf:'Android',value:2},{pf:'Winphone',value:3}];
-var day_table = 'http://172.21.174.51:8080/timebranch/api/filter';
+var day_table = '<?=site_url() . "api/filter"?>';
 var task_event = [{day:'2014-01-10',
 				   task:[{stime:'2014-01-10',mtime:'2014-02-02',gname:'NBA',reason:'修改理由',market:'大陆',pf:'Android',point:'CBT1'},
   						 {stime:'2014-01-10',mtime:'2014-02-02',gname:'ck',reason:'修改理由',market:'台湾',pf:'Android',point:'CBT1'},
 						 {stime:'2014-01-10',mtime:'2014-02-02',gname:'TF',reason:'修改理由',market:'大陆',pf:'Winphone',point:'CBT1'}
-						]					 
+						]
 				  },
 				  {day:'2014-01-11',
 				   task:[{stime:'2014-01-12',mtime:'2014-02-02',gname:'NBA',reason:'修改理由',market:'台湾',pf:'Ios',point:'CBT1'},
   						 {stime:'2014-01-12',mtime:'2014-02-02',gname:'NBA',reason:'修改理由',market:'台湾',pf:'Ios',point:'CBT1'},
 						 {stime:'2014-01-12',mtime:'2014-02-02',gname:'TF',reason:'修改理由',market:'大陆',pf:'Winphone',point:'CBT1'}
-						]					 
+						]
 				  },
 				  {day:'2014-01-12',
 				   task:[{stime:'2014-01-13',mtime:'2014-02-01',gname:'NBA',reason:'修改理由',market:'大陆',pf:'Android',point:'CBT1'},
   						 {stime:'2014-01-14',mtime:'2014-02-14',gname:'ck',reason:'修改理由',market:'台湾',pf:'Ios',point:'CBT1'},
 						 {stime:'2014-01-11',mtime:'2014-02-15',gname:'ck',reason:'修改理由',market:'大陆',pf:'Winphone',point:'CBT1'}
-						]					 
+						]
 				  },
 				 ];
-				 
+
 var date_array = [{
 				name: 'Tokyo',
 				data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
@@ -256,7 +256,7 @@ var date_array = [{
 				data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8],
 			}];
 
-$(function () {	
+$(function () {
 
 		$(".gantt").gantt({
 				source: [{
@@ -266,7 +266,7 @@ $(function () {
 						id: "t01",
 						from: "/Date(1320192000000)/",
 						to: "/Date(1322401600000)/",
-						label: "Requirement Gathering", 
+						label: "Requirement Gathering",
 						customClass: "ganttRed",
 						desc: "aa"
 					}]
@@ -277,7 +277,7 @@ $(function () {
 						id: "t02",
 						from: "/Date(1322611200000)/",
 						to: "/Date(1323302400000)/",
-						label: "Scoping", 
+						label: "Scoping",
 						customClass: "ganttRed",
 						dep: "t01",
 						desc: "bb"
@@ -288,7 +288,7 @@ $(function () {
 					values: [{
 						from: "/Date(1323802400000)/",
 						to: "/Date(1325685200000)/",
-						label: "Development", 
+						label: "Development",
 						customClass: "ganttGreen",
 						desc: "cc"
 					}]
@@ -298,7 +298,7 @@ $(function () {
 					values: [{
 						from: "/Date(1325685200000)/",
 						to: "/Date(1325695200000)/",
-						label: "Showcasing", 
+						label: "Showcasing",
 						customClass: "ganttBlue",
 						desc: "dd"
 					}]
@@ -308,7 +308,7 @@ $(function () {
 					values: [{
 						from: "/Date(1326785200000)/",
 						to: "/Date(1325785200000)/",
-						label: "Development", 
+						label: "Development",
 						customClass: "ganttGreen",
 						desc: "ee"
 					}]
@@ -318,7 +318,7 @@ $(function () {
 					values: [{
 						from: "/Date(1328785200000)/",
 						to: "/Date(1328905200000)/",
-						label: "Showcasing", 
+						label: "Showcasing",
 						customClass: "ganttBlue",
 						desc: "ff"
 					}]
@@ -328,7 +328,7 @@ $(function () {
 					values: [{
 						from: "/Date(1330011200000)/",
 						to: "/Date(1336611200000)/",
-						label: "Training", 
+						label: "Training",
 						customClass: "ganttOrange",
 						desc: "gg"
 					}]
@@ -338,7 +338,7 @@ $(function () {
 					values: [{
 						from: "/Date(1336611200000)/",
 						to: "/Date(1338711200000)/",
-						label: "Deployment", 
+						label: "Deployment",
 						customClass: "ganttOrange",
 						desc: "hh"
 					}]
@@ -348,7 +348,7 @@ $(function () {
 					values: [{
 						from: "/Date(1336611200000)/",
 						to: "/Date(1349711200000)/",
-						label: "Warranty Period", 
+						label: "Warranty Period",
 						customClass: "ganttOrange",
 						desc: "ii"
 					}]
@@ -416,7 +416,7 @@ $(function () {
 			},
 			series: date_array
 		});
-		
+
 	function setChart(name, categories, data, color) {
 		chart.xAxis[0].setCategories(categories, false);
 		chart.series[0].remove(false);
@@ -427,8 +427,8 @@ $(function () {
 		}, false);
 		chart.redraw();
     };
-	
-});	
+
+});
  jQuery(function () {
             // 时间设置
             jQuery('#starttime').datetimepicker({
