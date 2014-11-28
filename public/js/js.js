@@ -130,6 +130,7 @@ angular.module('gameTool', ['ngRoute'])
 				if(data['status'] == true){
 					$scope.menu_game = data['data'];
 				};
+				$scope.param.game = '-- 请选择 --';
 	   	});
 		
 		$http.get(day_table).success(function(data) {
@@ -144,7 +145,7 @@ angular.module('gameTool', ['ngRoute'])
 			alert('param:'+$scope.param);
 			
 			var query = day_table+"?gname="+$scope.param.game+"&pf="+$scope.param.platform+"&stime="+$scope.param.starttime+"&mtime="+$scope.param.endtime+"&market="+$scope.param.market;
-			$http.get(day_table).success(function(data) {
+			$http.get(query).success(function(data) {
 				$rootScope.http = data['data'];
 	   		});
 		};
