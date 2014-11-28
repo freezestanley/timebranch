@@ -37,7 +37,7 @@ class Project extends MY_Controller {
         {
             $this->load->model('project_model', 'project');
             $this->project->insert();
-            echo 'ok';
+            redirect(site_url());
         }
     }
 
