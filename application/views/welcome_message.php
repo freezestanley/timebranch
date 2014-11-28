@@ -55,8 +55,7 @@
           <div class="panel-body">
           {{d.day}}
           <table width="100%" class="p_table">
-          	<thead><tr><td>项目节点</td><td>项目名称</td><td>市场</td><td>平台</td><td>历史</td></tr></thead>
-            <tbody><tr ng-repeat="task in d.task"><td>{{task.point}}</td><td>{{task.gname}}</td><td>{{task.market}}</td><td>{{task.pf}}</td><td><a href="#">历史</a></td></tr></tbody>
+          	  <tbody><tr ng-repeat="task in d.task"><td>{{task.point}}</td><td>{{task.gname}}</td><td>{{task.market}}</td><td>{{task.pf}}</td><td><a href="#">历史</a></td></tr></tbody>
           </table>
           	
           </div>
@@ -228,7 +227,7 @@
 var menu_game = [{id:1001,gameName:'NBA'},{id:1001,gameName:'ck'},{id:1001,gameName:'tf'}];
 var menu_form = [{market:'大陆',value:'1'},{market:'台湾',value:'2'},{market:'海外',value:'3'}];
 var menu_market = [{pf:'IOS',value:1},{pf:'Android',value:2},{pf:'Winphone',value:3}];
-
+var day_table = 'http://172.21.174.51:8080/timebranch/api/filter';
 var task_event = [{day:'2014-01-10',
 				   task:[{stime:'2014-01-10',mtime:'2014-02-02',gname:'NBA',reason:'修改理由',market:'大陆',pf:'Android',point:'CBT1'},
   						 {stime:'2014-01-10',mtime:'2014-02-02',gname:'ck',reason:'修改理由',market:'台湾',pf:'Android',point:'CBT1'},
