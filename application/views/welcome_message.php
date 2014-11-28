@@ -55,7 +55,7 @@
           <div class="panel-body">
 			{{d.day}}
           <table width="100%" class="p_table">
-          	  <tbody><tr ng-repeat="task in d.task"><td>{{task.point}}</td><td>{{task.gname}}</td><td>{{task.market}}</td><td>{{task.pf}}</td><td><a href="#">历史</a></td></tr></tbody>
+          	  <tbody><tr ng-repeat="task in d.task"><td>{{task.gname}}</td><td>{{task.point}}</td><td>{{task.market}}</td><td>{{task.pf}}</td><td><a href="#">历史</a></td></tr></tbody>
           </table>
 
           </div>
