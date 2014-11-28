@@ -8,8 +8,9 @@
 <div class="bs-callout bs-callout-info" ng-controller="MenuController">
     <div class="row">
       <div class="col-xs-2">
-        <select class="form-control" ng-model="param.game" ng-options="o.id as o.name for o in menu_game">
-  
+        <select class="form-control" ng-model="param.game">
+  			<option value="">-- 请选择 --</option>
+            <option ng-repeat="o in menu_game" value="{{o.name}}">{{o.name}}</option>
         </select>
       </div>
       <div class="col-xs-2">
