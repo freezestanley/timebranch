@@ -135,7 +135,7 @@ angular.module('gameTool', ['ngRoute'])
 		var change = function(){
 			alert('param:'+$scope.param);
 			
-			var query = day_table+"?gname="+$scope.param.game+"&pf="+$scope.param.platform+"&stime="+$scope.param.starttime+"&mtime"+$scope.param.endtime+"&market="+$scope.param.market;
+			var query = day_table+"?gname="+$scope.param.game+"&pf="+$scope.param.platform+"&stime="+$scope.param.starttime+"&mtime="+$scope.param.endtime+"&market="+$scope.param.market;
 			$http.get(day_table).success(function(data) {
 				$rootScope.http = data['data'];
 	   		});
