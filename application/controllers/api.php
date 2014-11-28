@@ -8,9 +8,16 @@ class API extends CI_Controller {
         if ($status !== TRUE) {
             $result['err_msg'] = $err_msg;
         }
+
         header('Content-Type: application/json');
-        echo json_encode($result);
+        $callback = $this->input->get('cb');
+        if (!empty($callback)) {
+          echo $callback . '(' . json_encode($result) . ');';
+        } else {
+          echo json_encode($result);
+        }
         exit;
+
     }
 
     function __construct()
@@ -58,7 +65,13 @@ class API extends CI_Controller {
 
         foreach ($projects as $project) {
             // $stime = date('Y-m-d', $project->n_addtime);
-            $stime = $project->update_time;
+            // 实际数据可能没有 node 只有 project
+            if (empty($project->update_time)) {
+              $stime = $project->deadline_time;
+            } else {
+              $stime = $project->update_time;
+            }
+            $mtime = $stime;
             if (empty($project->node_id)) {
               continue;
             }
@@ -69,7 +82,7 @@ class API extends CI_Controller {
                              'point' => $project->n_type,
                              'pf' => $project->os,
                              'stime' => $stime,
-                             'mtime' => $project->update_time,
+                             'mtime' => $mtime,
                              'market' => $project->area,
                              'gname' => $project->name,
                              'nid' => $project->node_id);
@@ -81,7 +94,7 @@ class API extends CI_Controller {
                              'point' => $project->n_type,
                              'pf' => $project->os,
                              'stime' => $stime,
-                             'mtime' => $project->update_time,
+                             'mtime' => $mtime,
                              'market' => $project->area,
                              'gname' => $project->name,
                              'nid' => $project->node_id);
@@ -153,5 +166,16 @@ class API extends CI_Controller {
     {
         $projects = $this->project->get_projects();
         $this->json($projects);
+    }
+
+    public function history()
+    {
+      $nid = $this->input->get('nid');
+      if ($nid == null) {
+        show_404();
+      }
+      $this->load->model('update_model', 'update');
+      $result = $this->update->get_by_nid($nid);
+      $this->json($result);
     }
 }

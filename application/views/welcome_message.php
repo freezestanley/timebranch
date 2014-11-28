@@ -444,22 +444,20 @@ var ztime;
  jQuery(function () {
             // 时间设置
             jQuery('#starttime').datetimepicker({
-               // timeFormat: "HH:mm:ss",
                 dateFormat: "yy-mm-dd",
 				
-				onClose:function(time){
-					var element = $(this),text;
-					//var timepicker = element.timepicker();
-					//text = 'Selected time is: ' + timepicker.format(time);
-					ztime = time;
-            		jQuery('#endtime').datetimepicker({
-						//timeFormat: "HH:mm:ss",
-						minDate = ztime;
-						dateFormat: "yy-mm-dd"
-					});
-				}
+        				onClose:function(time){
+                  $('#endtime').datepicker( "option", "minDate", time );
+        				}
             });
-			
+      			jQuery('#endtime').datetimepicker({
+      				//timeFormat: "HH:mm:ss",
+      				dateFormat: "yy-mm-dd",
+              onClose:function(time){
+                  $('#starttime').datepicker( "option", "maxDate", time );
+                }
+      			});
+
         });
 </script>
 <?php include 'footer.php'?>
