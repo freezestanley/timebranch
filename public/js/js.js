@@ -120,7 +120,7 @@ angular.module('gameTool', ['ngRoute'])
 			$scope.showDia = true;
 		
 	};
-	$scope.$watch('pop_id',dialog_change);
+	$rootScope.$watch('pop_id',pop_change);
 	
 	var dialog_change = function(){
 		if($scope.showDia == true){
