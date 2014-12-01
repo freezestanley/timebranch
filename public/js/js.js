@@ -103,7 +103,7 @@ angular.module('gameTool', ['ngRoute'])
 
 })
 
-.controller("totalController",function totalController($scope,$rootScope,$http){
+.controller("totalController",function totalController($scope,$http,$rootScope){
 		var root_change = function(){
 			$scope.detail_info = $rootScope.http;
 		};
@@ -114,12 +114,13 @@ angular.module('gameTool', ['ngRoute'])
 		
 })
 .controller("dialogController",function($scope,$http,$rootScope){
-	//$scope.showDia = true;
-	$rootScope.$watch('pop_id',function(){
+	$scope.showDia = false;
+	$scope.pop_id = $rootScope.pop_id;
+	var pop_change = function(){
 			$scope.showDia = true;
-		});
-	
-	
+		
+	};
+	$scope.$watch('pop_id',dialog_change);
 	
 	var dialog_change = function(){
 		if($scope.showDia == true){
