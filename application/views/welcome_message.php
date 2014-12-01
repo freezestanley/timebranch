@@ -95,7 +95,7 @@
     </div>
   </div>
 
-    <div id="container" style="width:940px;height:600px;" ng-show="showCtl.tab_show"></div>
+    <div id="container" style="width:940px;height:600px; margin-bottom:30px;" ng-show="showCtl.tab_show"></div>
 
     <div ng-show="showCtl.tab_show2">
         <div class="panel panel-primary">
