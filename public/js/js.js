@@ -109,12 +109,17 @@ angular.module('gameTool', ['ngRoute'])
 		};
 		$rootScope.$watch('http',root_change);
 		$scope.setPopID = function(n){
-			$rootScope.pop_id = n;
+			$rootScope.pop_id = parseInt(n);
 		};
 		
 })
 .controller("dialogController",function($scope,$http){
-	$scope.showDia = true;
+	//$scope.showDia = true;
+	$rootScope.$watch('pop_id',function(){
+			$scope.showDia = true;
+		});
+	
+	
 	
 	var dialog_change = function(){
 		if($scope.showDia == true){
