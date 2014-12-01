@@ -130,7 +130,7 @@ angular.module('gameTool', ['ngRoute'])
 					alert(data['err_msg']);	
 				};
 	   		});
-			
+		
 	$scope.show_dia = function(){
 		$('#mask').css('width',function(){return $(document).width();});
 		$('#mask').css('height',function(){return $(document).height();});
