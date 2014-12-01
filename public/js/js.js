@@ -119,17 +119,18 @@ angular.module('gameTool', ['ngRoute'])
 	var dialog_change = function(){
 		if($scope.showDia == true){
 			$scope.show_dia();
-		}else{
-			$scope.hide_dia();
-		}	
-	};
-	$http.get(pop_url).success(function(data) {
+			$http.get(pop_url).success(function(data) {
 				if(data['status']){
 					$scope.history = data['data'];
 				}else{
 					alert(data['err_msg']);	
 				};
 	   		});
+		}else{
+			$scope.hide_dia();
+		}	
+	};
+	
 		
 	$scope.show_dia = function(){
 		$('#mask').css('width',function(){return $(document).width();});
