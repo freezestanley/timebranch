@@ -64,7 +64,7 @@
               <td>{{task.point}}</td>
               <td>{{task.market}}</td>
               <td>{{task.pf}}</td>
-              <td><a ng-click='setPopID(task.nid);'>历史</a></td> <!--ng-click="showpop({{task.nid}});"-->
+              <td><a ng-click="setPopID(task.nid);">历史</a></td> <!--ng-click="showpop({{task.nid}});"-->
               </tr>
               </tbody>
           </table>
