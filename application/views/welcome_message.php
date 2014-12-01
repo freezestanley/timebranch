@@ -80,7 +80,7 @@
 
 
  <!-- <div class="gantt"></div>-->
-  <iframe src="<?=site_url()?>api/gantt_iframe"></iframe>
+  <iframe src="<?=site_url()?>api/gantt_iframe" style="width:100%; border:none;"></iframe>
 
 
 
