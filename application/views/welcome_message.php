@@ -64,7 +64,7 @@
               <td>{{task.point}}</td>
               <td>{{task.market}}</td>
               <td>{{task.pf}}</td>
-              <td><a href="javascript:;" ng-click="setPopID({{task.nid}});">历史</a></td> <!--ng-click="showpop({{task.nid}});"-->
+              <td><a href="javascript:;" ng-click="setPopID();">历史</a></td> <!--ng-click="showpop({{task.nid}});"-->
               </tr>
               </tbody>
           </table>
@@ -249,7 +249,7 @@ var menu_game = [{id:1001,gameName:'NBA'},{id:1001,gameName:'ck'},{id:1001,gameN
 var menu_form = ['IOS（越狱）', 'IOS（正版）', 'IOS', 'ANDROID','WindowPhone'];
 var menu_market = ['TW','CN'];
 var day_table = '<?=site_url() . "api/filter"?>';
-var pop_url = '<?=site_url()?>timeline/api/history?nid=';
+var pop_url = '<?=site_url()?>api/history?nid=';
 var game_name_url = '<?=site_url() . "api/get_projects"?>';
 
 var task_event = [{day:'2014-01-10',
