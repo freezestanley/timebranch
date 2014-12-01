@@ -136,7 +136,7 @@ angular.module('gameTool', ['ngRoute'])
 			$scope.showDia = false;
 		}	
 	};
-	$scope.showDia = false;
+	
 		
 	$scope.show_dia = function(){
 		$('#mask').css('width',function(){return $(document).width();});
@@ -155,6 +155,7 @@ angular.module('gameTool', ['ngRoute'])
 			//$('#dialog').hide();
 	};
 	$scope.$watch('showDia',dialog_change);
+	$scope.showDia = false;
 })
 .controller("MenuController",function ($scope,$rootScope,$http){
 		$scope.param = {};
