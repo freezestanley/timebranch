@@ -115,7 +115,6 @@ angular.module('gameTool', ['ngRoute'])
 })
 .controller("dialogController",function($scope,$http,$rootScope){
 	$scope.showDia = false;
-	$scope.pop_id = $rootScope.pop_id;
 	var pop_change = function(){
 			$scope.showDia = true;
 		
@@ -125,7 +124,8 @@ angular.module('gameTool', ['ngRoute'])
 	var dialog_change = function(){
 		if($scope.showDia == true){
 			$scope.show_dia();
-			$http.get(pop_url+$scope.pop_id).success(function(data) {
+			alert($rootScope.pop_id);
+			$http.get(pop_url+$rootScope.pop_id).success(function(data) {
 				if(data['status']){
 					$scope.history = data['data'];
 				}else{
