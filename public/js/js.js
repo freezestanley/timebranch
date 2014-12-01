@@ -113,7 +113,7 @@ angular.module('gameTool', ['ngRoute'])
 		};
 		
 })
-.controller("dialogController",function($scope,$http){
+.controller("dialogController",function($scope,$http,$rootScope){
 	//$scope.showDia = true;
 	$rootScope.$watch('pop_id',function(){
 			$scope.showDia = true;
