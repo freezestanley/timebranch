@@ -78,10 +78,9 @@
 
 
 
-	<script src="http://taitems.github.io/jQuery.Gantt/js/jquery.min.js"></script>
-	<script src="http://taitems.github.io/jQuery.Gantt/js/jquery.fn.gantt.js"></script>
-	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-  <div class="gantt"></div>
+
+ <!-- <div class="gantt"></div>-->
+  <iframe src="<?=site_url()?>api/gantt_html"></iframe>
 
 
 
@@ -300,7 +299,7 @@ var ztime;
         });
 $(function () {
 
-		$(".gantt").gantt({
+		/*$(".gantt").gantt({
 				source: [{
 					name: "Sprint 0",
 					desc: "Analysis",
@@ -418,7 +417,7 @@ $(function () {
 				title: "I'm a popover",
 				content: "And I'm the content of said popover.",
 				trigger: "hover"
-			});
+			});*/
 
 			//
 
