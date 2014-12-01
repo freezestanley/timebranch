@@ -84,12 +84,15 @@ class Project_model extends CI_Model {
         }
 
         if ($condition['startime']) {
-            $sql .= " and update_time > '" . $condition['startime'] . "'";
+            $sql .= " and update_time >= '" . $condition['startime'] . "'";
         }
 
         if ($condition['deadtime']) {
             $sql .= " and update_time <= '" . $condition['deadtime'] . "'";
         }
+
+        // echo $sql;
+        // exit;
 
         $query = $this->db->query($sql);
         return $query->result();
