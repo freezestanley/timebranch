@@ -177,6 +177,81 @@ class API extends CI_Controller {
       }
       $this->load->model('update_model', 'update');
       $result = $this->update->get_by_nid($nid);
+      $_result = array();
+      foreach ($result as $value) {
+          $value->addtime = date('Y-m-d', $value->addtime);
+          $_result[] = $value;
+      }
       $this->json($result);
+    }
+
+    public function gantt()
+    {
+        $project_name = $this->input->get('gname');
+        $project_os = $this->input->get('pf');
+        $project_area = $this->input->get('market');
+        $project_startime = $this->input->get('stime');
+        $project_deadtime = $this->input->get('mtime');
+        $page = $this->input->get('p');
+        if (empty($page)) {
+            $page = 1;
+        }
+
+        $condition = array('name' => $project_name,
+                           'os' => $project_os,
+                           'area' => $project_area,
+                           'startime' => $project_startime,
+                           'deadtime' => $project_deadtime,
+                           );
+        $projects = $this->project->filter($condition);
+        $this->json($this->_gantt_filter($projects));
+    }
+
+    public function _gantt_filter($projects)
+    {
+        $result = array();
+
+        $games = array();
+
+        foreach ($projects as $project) {
+            if (!isset($games[$project->name])) {
+                $games[$project->name] = array();
+            }
+        }
+
+        foreach ($games as $key => $value) {
+            foreach ($projects as $project) {
+                if ($key == $project->name) {
+                    $_node = array('id' => $project->pid,
+                                   'from' => '/Date(' . strtotime($project->update_time) . '000/',
+                                   'to' => '/Date(' . strtotime($project->update_time) . '000/',
+                                   'label' => $project->n_remark,
+                                   'desc' => $project->n_remark,
+                                   'customClass' => 'ganttRed');
+
+                    if (isset($games[$key][$project->pid])) {
+                        $games[$key][$project->pid]['values'][] = $_node;
+                    } else {
+                        $_project = array('name' => $project->name,
+                                      'desc' => $project->area . '（' . $project->os . '）',
+                                      'values' => array($_node));
+                        $games[$key][$project->pid] = $_project;
+                    }
+                }
+            }
+        }
+
+        foreach ($games as $key => $value) {
+            $_temp = array();
+            foreach ($value as $_key => $_value) {
+                $_temp[] = $_value;
+            }
+            $result[] = $_temp[0];
+            for ($i = 0; $i < count($_temp); $i++) {
+                $_temp[$i]['name'] = ' ';
+                $result[] = $_temp[$i];
+            }
+        }
+        return $result;
     }
 }
