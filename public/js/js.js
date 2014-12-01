@@ -133,7 +133,7 @@ angular.module('gameTool', ['ngRoute'])
 				};
 	   		});
 		}else{
-			$scope.hide_dia();
+			$scope.showDia = true;
 		}	
 	};
 	
@@ -141,8 +141,8 @@ angular.module('gameTool', ['ngRoute'])
 	$scope.show_dia = function(){
 		$('#mask').css('width',function(){return $(document).width();});
 		$('#mask').css('height',function(){return $(document).height();});
-		$('#mask').show();
-		$('#dia_zone').show();
+		//$('#mask').show();
+		//$('#dia_zone').show();
 		$('#dia_zone').css('left',function(){
 			return ($(window).scrollLeft()+ $(window).width()-$('#dia_zone').width())/2;
 			});
@@ -151,8 +151,8 @@ angular.module('gameTool', ['ngRoute'])
 			});
 	};
 	$scope.hide_dia = function(){
-			$('#mask').hide();
-			$('#dialog').hide();
+			//$('#mask').hide();
+			//$('#dialog').hide();
 	};
 	$scope.$watch('showDia',dialog_change);
 })
