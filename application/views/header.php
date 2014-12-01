@@ -11,9 +11,9 @@
 <meta http-equiv="Cache-Control" content="no-siteapp">
 <link href="<?php echo css_url("bootstrap.min.css");?>" rel="stylesheet"/>
 <link href="<?php echo css_url("style.css");?>" rel="stylesheet"/>
-<link href="<?php echo css_url("gantt.css");?>" rel="stylesheet"/>
 <link href="<?php echo css_url("jquery-ui.css");?>" rel="stylesheet"/>
 <link href="<?php echo css_url("jquery-ui-timepicker-addon.css");?>" rel="stylesheet" />
+<link href="<?php echo css_url("gantt.css");?>" rel="stylesheet"/>
 <script type="text/javascript" src='<?php echo js_url('jquery.min.js'); ?>'></script>
 <script type="text/javascript" src='<?php echo js_url('jquery.fn.gantt.js'); ?>'></script>
 <script type="text/javascript" src='<?php echo js_url('jquery-ui.min.js'); ?>'></script>

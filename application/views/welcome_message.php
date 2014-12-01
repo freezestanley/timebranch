@@ -78,7 +78,9 @@
 
 
 
-
+	<script src="http://taitems.github.io/jQuery.Gantt/js/jquery.min.js"></script>
+	<script src="http://taitems.github.io/jQuery.Gantt/js/jquery.fn.gantt.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <div class="gantt"></div>
 
 
@@ -279,7 +281,23 @@ var date_array = [{
 				name: 'London',
 				data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8],
 			}];
+var ztime;
+ jQuery(function () {
+            // 时间设置
+            jQuery('#starttime').datetimepicker({
+                dateFormat: "yy-mm-dd",
 
+        		  onClose:function(time){
+                  $('#endtime').datepicker( "option", "minDate", time );
+        				}
+            });
+      		jQuery('#endtime').datetimepicker({
+      			dateFormat: "yy-mm-dd",
+                onClose:function(time){
+                  $('#starttime').datepicker( "option", "maxDate", time );
+                }
+      		});
+        });
 $(function () {
 
 		$(".gantt").gantt({
@@ -534,24 +552,6 @@ $(function () {
     })
     .highcharts(); 
 });
-var ztime;
- jQuery(function () {
-            // 时间设置
-            jQuery('#starttime').datetimepicker({
-                dateFormat: "yy-mm-dd",
 
-        		  onClose:function(time){
-                  $('#endtime').datepicker( "option", "minDate", time );
-        				}
-            });
-      			jQuery('#endtime').datetimepicker({
-      				//timeFormat: "HH:mm:ss",
-      				dateFormat: "yy-mm-dd",
-              onClose:function(time){
-                  $('#starttime').datepicker( "option", "maxDate", time );
-                }
-      			});
-
-        });
 </script>
 <?php include 'footer.php'?>
