@@ -45,3 +45,26 @@ border-left-color:#1C67AC;
 .p_table td{ text-align:center; line-height:30px; height:30px;width:20%;}
 .p_table tbody tr:nth-child(odd) td{ background:#efefef;}
 .well{ height:500px; overflow-y:scroll;}
+.dialog{ position:absolute; top:0;left:0;z-index:9999;}
+.mask{opacity:0.7;background:#000; position:absolute; }
+.dia_zone{display: block;
+padding: 10px;
+margin: 0 0 10px;
+font-size: 13px;
+line-height: 20px;
+background-color: #f5f5f5;
+border: 1px solid #ccc;
+border: 1px solid rgba(0,0,0,0.15);
+-webkit-border-radius: 4px; position:absolute;
+-moz-border-radius: 4px;
+border-radius: 4px; width:600px; z-index:99999; }
+.close{ display: block;
+position: absolute;
+right: -25px;
+top: 10px;
+width: 50px;
+height: 30px;
+background: url(../images/close.png) no-repeat;}
+.dia_zone table{ display:table; width:100%;}
+.dia_zone table tbody{ display:block;width:100%;}
+.dia_zone table td{width:200px;  text-align:center;}
