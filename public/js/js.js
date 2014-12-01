@@ -114,7 +114,7 @@ angular.module('gameTool', ['ngRoute'])
 		
 })
 .controller("dialogController",function($scope,$http,$rootScope){
-	$scope.showDia = false;
+	
 	var pop_change = function(){
 			$scope.showDia = true;
 		
@@ -136,7 +136,7 @@ angular.module('gameTool', ['ngRoute'])
 			$scope.showDia = false;
 		}	
 	};
-	
+	$scope.showDia = false;
 		
 	$scope.show_dia = function(){
 		$('#mask').css('width',function(){return $(document).width();});
