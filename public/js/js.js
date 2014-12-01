@@ -133,7 +133,7 @@ angular.module('gameTool', ['ngRoute'])
 				};
 	   		});
 		}else{
-			$scope.showDia = true;
+			$scope.showDia = false;
 		}	
 	};
 	
