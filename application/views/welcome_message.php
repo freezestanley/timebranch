@@ -1,4 +1,4 @@
-<?php include 'header.php'?>
+                                                                                                                                                         <?php include 'header.php'?>
   <div class="jumbotron">
     <h2 style="padding-top: 13px;">DeNA Project TimeLine</h2>
     <p class="lead">展示各个游戏项目的上线时间。<br>
@@ -64,7 +64,7 @@
               <td>{{task.point}}</td>
               <td>{{task.market}}</td>
               <td>{{task.pf}}</td>
-              <td><a href="javascript:;">历史</a></td> <!--ng-click="showpop({{task.nid}});"-->
+              <td><a href="javascript:;" ng-click="setPopID({{task.nid}});">历史</a></td> <!--ng-click="showpop({{task.nid}});"-->
               </tr>
               </tbody>
           </table>
@@ -232,14 +232,24 @@
   <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
   <pre>$routeParams = {{$routeParams}}</pre>
 </div>-->
-
+<div class="dialog" id="dialog" ng-controller="dialogController" ng-show="showDia">
+		<div class="dia_zone" id="dia_zone">
+        <a href="javascript:;" ng-click="showDia = showDia == true?false:true;" class="close"></a>
+			<table class="">
+            	<tr><td>项目时间</td><td>修改操作</td><td>修改时间</td><td>修改原因</td></tr>
+            	<tr ng-repeat="h in history"><td >{{h.update_time}}</td><td>>{{h.type | typefilter}}</td><td>>{{h.addtime}}</td><td>{{h.remark}}</td></tr>
+            </table>
+        </div>
+        
+        <div class="mask" id="mask"></div>
+</div>
 
 <script>
 var menu_game = [{id:1001,gameName:'NBA'},{id:1001,gameName:'ck'},{id:1001,gameName:'tf'}];
 var menu_form = ['IOS（越狱）', 'IOS（正版）', 'IOS', 'ANDROID','WindowPhone'];
 var menu_market = ['TW','CN'];
 var day_table = '<?=site_url() . "api/filter"?>';
-var pop_url = 'timeline/api/history?nid=';
+var pop_url = '<?=site_url()?>timeline/api/history?nid=';
 var game_name_url = '<?=site_url() . "api/get_projects"?>';
 
 var task_event = [{day:'2014-01-10',
@@ -396,40 +406,55 @@ $(function () {
 
 
 
-		$('#container').highcharts({
-			chart: {
-				type: 'line'
-			},
-			title: {
-				text: '任务图表'
-			},
-			subtitle: {
-				text: ' '
-			},
-			xAxis: {
-				categories: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
-			},
-			yAxis: {
-				title: {
-					text: '任务数量'
-				}
-			},
-			tooltip: {
-				enabled: true,
-				formatter: function() {
-					return '<b>'+ this.series.name +'</b><br>'+this.x +': '+ this.y +'°C';
-				}
-			},
-			plotOptions: {
-				line: {
-					dataLabels: {
-						enabled: true
-					},
-					enableMouseTracking: true
-				}
-			},
-			series: date_array
-		});
+		 var colors = Highcharts.getOptions().colors,
+        categories = ['NBA', 'CK', 'TF', '女神', '龙之心'],
+        name = 'Browser brands',
+        data = [{
+                y: 55.11,
+                color: colors[0],
+                drilldown: {
+                    name: 'NBA versions',
+                    categories: ['CBT 1.0', 'CBT 2.0', 'CBT 3.0', 'CBT 4.0'],
+                    data: [10.85, 7.35, 33.06, 2.81],
+                    color: colors[0]
+                }
+            }, {
+                y: 21.63,
+                color: colors[1],
+                drilldown: {
+                    name: 'CK versions',
+                    categories: ['CBT 1.0', 'CBT 2.0', 'CBT 3.0', 'CBT 4.0'],
+                    data: [0.20, 0.83, 1.58, 13.12, 5.43],
+                    color: colors[1]
+                }
+            }, {
+                y: 11.94,
+                color: colors[2],
+                drilldown: {
+                    name: 'TF versions',
+                    categories: ['CBT 1.0', 'CBT 2.0', 'CBT 3.0', 'CBT 4.0'],
+                    data: [0.12, 0.19, 0.12, 0.36, 0.32, 9.91, 0.50, 0.22],
+                    color: colors[2]
+                }
+            }, {
+                y: 7.15,
+                color: colors[3],
+                drilldown: {
+                    name: '女神 versions',
+                    categories: ['CBT 1.0', 'CBT 2.0', 'CBT 3.0', 'CBT 4.0'],
+                    data: [4.55, 1.42, 0.23, 0.21, 0.20, 0.19, 0.14],
+                    color: colors[3]
+                }
+            }, {
+                y: 2.14,
+                color: colors[4],
+                drilldown: {
+                    name: '龙之心 versions',
+                    categories: ['CBT 1.0', 'CBT 2.0', 'CBT 3.0', 'CBT 4.0'],
+                    data: [ 0.12, 0.37, 1.65],
+                    color: colors[4]
+                }
+            }];
 
 	function setChart(name, categories, data, color) {
 		chart.xAxis[0].setCategories(categories, false);
@@ -441,7 +466,73 @@ $(function () {
 		}, false);
 		chart.redraw();
     };
-
+	 var chart = $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'DeNA China game project.'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: categories
+        },
+        yAxis: {
+            title: {
+                text: '项目时间统计'
+            }
+        },
+        plotOptions: {
+            column: {
+                cursor: 'pointer',
+                point: {
+                    events: {
+                        click: function() {
+                            var drilldown = this.drilldown;
+                            if (drilldown) { // drill down
+                                setChart(drilldown.name, drilldown.categories, drilldown.data, drilldown.color);
+                            } else { // restore
+                                setChart(name, categories, data);
+                            }
+                        }
+                    }
+                },
+                dataLabels: {
+                    enabled: true,
+                    color: colors[0],
+                    style: {
+                        fontWeight: 'bold'
+                    },
+                    formatter: function() {
+                        return this.y +'个';
+                    }
+                }
+            }
+        },
+        tooltip: {
+            formatter: function() {
+                var point = this.point,
+                    s = this.x +':<b>'+ this.y +'个项目</b><br>';
+                if (point.drilldown) {
+                    s += '点击查看 '+ point.category +' 详细';
+                } else {
+                    s += 'Click to return to browser brands';
+                }
+                return s;
+            }
+        },
+        series: [{
+            name: name,
+            data: data,
+            color: 'white'
+        }],
+        exporting: {
+            enabled: false
+        }
+    })
+    .highcharts(); 
 });
 var ztime;
  jQuery(function () {
@@ -449,7 +540,7 @@ var ztime;
             jQuery('#starttime').datetimepicker({
                 dateFormat: "yy-mm-dd",
 
-        				onClose:function(time){
+        		  onClose:function(time){
                   $('#endtime').datepicker( "option", "minDate", time );
         				}
             });

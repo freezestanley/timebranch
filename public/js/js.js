@@ -108,11 +108,47 @@ angular.module('gameTool', ['ngRoute'])
 			$scope.detail_info = $rootScope.http;
 		};
 		$rootScope.$watch('http',root_change);
-		$scope.showpop = function(){
-			
+		$scope.setPopID = function(n){
+			$rootScope.pop_id = n;
 		};
+		
 })
-
+.controller("dialogController",function($scope,$http){
+	$scope.showDia = true;
+	
+	var dialog_change = function(){
+		if($scope.showDia == true){
+			$scope.show_dia();
+		}else{
+			$scope.hide_dia();
+		}	
+	};
+	$http.get(pop_url).success(function(data) {
+				if(data['status']){
+					$scope.history = data['data'];
+				}else{
+					alert(data['err_msg']);	
+				};
+	   		});
+			
+	$scope.show_dia = function(){
+		$('#mask').css('width',function(){return $(document).width();});
+		$('#mask').css('height',function(){return $(document).height();});
+		$('#mask').show();
+		$('#dia_zone').show();
+		$('#dia_zone').css('left',function(){
+			return ($(window).scrollLeft()+ $(window).width()-$('#dia_zone').width())/2;
+			});
+		$('#dia_zone').css('top',function(){
+			return $(window).scrollTop()+ (($(window).height()-$('#dia_zone').height())/2);
+			});
+	};
+	$scope.hide_dia = function(){
+			$('#mask').hide();
+			$('#dialog').hide();
+	};
+	$scope.$watch('showDia',dialog_change);
+})
 .controller("MenuController",function ($scope,$rootScope,$http){
 		$scope.param = {};
 		//$scope.param.game = '';
@@ -142,7 +178,7 @@ angular.module('gameTool', ['ngRoute'])
 	   	});
 		
 		var change = function(){
-			alert('param:'+$scope.param);
+			//alert('param:'+$scope.param);
 			var name = $scope.param.game?$scope.param.game:'';
 			var query = day_table+"?gname="+name+"&pf="+$scope.param.platform+"&stime="+$scope.param.starttime+"&mtime="+$scope.param.endtime+"&market="+$scope.param.market;
 			$http.get(query).success(function(data) {
@@ -161,7 +197,29 @@ angular.module('gameTool', ['ngRoute'])
 		};	
 		return titleCaseFilter;
 })
-						
+.filter('typefilter',function(){
+	var typefilter = function(input){
+			var ty = parseInt(input);
+			var result;
+			switch(ty){
+				case -1:
+					result = '提前';
+				break;
+					
+				case 0:
+					result = '不变';
+				break;
+				case 1:
+					result = '延后';
+				break;
+				case 2:
+					result='删除';
+				break;
+			};
+			return result;
+		};	
+		return typefilter;
+})	
 .config(function($routeProvider, $locationProvider) {
   $routeProvider
    .when('/Book/:bookId', {
@@ -190,4 +248,3 @@ angular.module('gameTool', ['ngRoute'])
 });
 })(window.angular);
 
-						
