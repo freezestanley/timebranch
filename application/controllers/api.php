@@ -204,7 +204,16 @@ class API extends CI_Controller {
                            'deadtime' => $project_deadtime,
                            );
         $projects = $this->project->filter($condition);
-        $this->json($this->_gantt_filter($projects));
+        header('Content-Type: application/json');
+        $result = json_encode($this->_gantt_filter($projects));
+        echo $result;
+        // echo str_replace('\/','/', $result);
+        // $this->json($this->_gantt_filter($projects));
+    }
+
+    public function gantt_iframe()
+    {
+        $this->load->view('gantt.html');
     }
 
     public function _gantt_filter($projects)
@@ -221,10 +230,15 @@ class API extends CI_Controller {
 
         foreach ($games as $key => $value) {
             foreach ($projects as $project) {
+                if ($project->nid == null) {
+                    continue;
+                }
                 if ($key == $project->name) {
+                    // $from = date('Y-m-d 23:59:59', $project->update_time);
+                    // $to = date('Y-m-d 00:00:00', $project->update_time);
                     $_node = array('id' => $project->pid,
-                                   'from' => '/Date(' . strtotime($project->update_time) . '000/',
-                                   'to' => '/Date(' . strtotime($project->update_time) . '000/',
+                                   'from' => '/Date(' . strtotime($project->update_time) . '000)/',
+                                   'to' => '/Date(' . strtotime($project->update_time) . '000)/',
                                    'label' => $project->n_remark,
                                    'desc' => $project->n_remark,
                                    'customClass' => 'ganttRed');
@@ -246,8 +260,11 @@ class API extends CI_Controller {
             foreach ($value as $_key => $_value) {
                 $_temp[] = $_value;
             }
+            if (empty($_temp)) {
+              continue;
+            }
             $result[] = $_temp[0];
-            for ($i = 0; $i < count($_temp); $i++) {
+            for ($i = 1; $i < count($_temp); $i++) {
                 $_temp[$i]['name'] = ' ';
                 $result[] = $_temp[$i];
             }

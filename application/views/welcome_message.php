@@ -80,7 +80,7 @@
 
 
  <!-- <div class="gantt"></div>-->
-  <iframe src="<?=site_url()?>api/gantt_html"></iframe>
+  <iframe src="<?=site_url()?>api/gantt_iframe"></iframe>
 
 
 
@@ -241,7 +241,7 @@
             	<tr ng-repeat="h in history"><td >{{h.update_time}}</td><td>{{h.type | typefilter}}</td><td>{{h.addtime}}</td><td>{{h.remark}}</td></tr>
             </table>
         </div>
-        
+
         <div class="mask" id="mask"></div>
 </div>
 
@@ -549,7 +549,7 @@ $(function () {
             enabled: false
         }
     })
-    .highcharts(); 
+    .highcharts();
 });
 
 </script>
