@@ -158,9 +158,10 @@ angular.module('gameTool', ['ngRoute'])
 		$('#dia_zone').css('left',function(){
 			return ($(window).scrollLeft()+ $(window).width()-$('#dia_zone').width())/2;
 			});
-		$('#dia_zone').css('top',function(){
+		$('#dia_zone').css('top',320);
+		/*function(){
 			return $(window).scrollTop()+ (($(window).height()-$('#dia_zone').height())/2);
-			});
+			});*/
 	};
 	$scope.hide_dia = function(){
 			$scope.showDia = $scope.showDia == true?false:true;
