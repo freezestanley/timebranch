@@ -189,7 +189,7 @@ angular.module('gameTool', ['ngRoute'])
 	   	});
 		
 		$http.get(day_table).success(function(data) {
-				//alert();
+				alert(day_table);
     			//$scope.phones = data;
 				if(data['status'] == true){
 					$rootScope.http = data['data'];
