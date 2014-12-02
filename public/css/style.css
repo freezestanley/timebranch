@@ -68,3 +68,76 @@ background: url(../images/close.png) no-repeat;}
 .dia_zone table{ display:table; width:100%;}
 .dia_zone table tbody{ display:block;width:100%;}
 .dia_zone table td{width:200px;  text-align:center;}
+
+
+.fn-gantt .g_red {
+background-color:#f9c2c3;
+}
+
+.fn-gantt .g_red_d {
+background-color:#A21517;
+}
+.fn-gantt .g_blue {
+background-color: #5A75AB;
+}
+.fn-gantt .g_blue_d {
+background-color:#99DBF3;
+}
+.fn-gantt .g_gray {
+background-color:#C8C4C4;
+}
+.fn-gantt .g_gray_d {
+background-color:#4B4646;
+}
+.fn-gantt .g_green {
+background-color:#BFFBB8;
+}
+.fn-gantt .g_green_d {
+background-color:#312F2F;
+}
+.fn-gantt .g_pink {
+background-color:#FBC5E8;
+}
+.fn-gantt .g_pink_d {
+background-color:#78306B;
+}
+.fn-gantt .g_brown {
+background-color:#4E2929;
+}
+.fn-gantt .g_brown_d {
+background-color:#967374;
+}
+.fn-gantt .g_orange {
+background-color:#E9AE80;
+}
+.fn-gantt .g_orange_d {
+background-color:#E8500B;
+}
+.fn-gantt .g_purple  {
+background-color: #fca9f7;
+}
+.fn-gantt .g_purple_d {
+background-color: #551351;
+}
+.fn-gantt .g_red .fn-label,
+.fn-gantt .g_blue .fn-label,
+.fn-gantt .g_gray .fn-label,
+.fn-gantt .g_green .fn-label,
+.fn-gantt .g_pink .fn-label,
+.fn-gantt .g_brown .fn-label,
+.fn-gantt .g_orange .fn-label,
+.fn-gantt .g_purple .fn-label,
+{
+color: #000 !important;
+}
+.fn-gantt .g_red_d .fn-label,
+.fn-gantt .g_blue_d .fn-label,
+.fn-gantt .g_gray_d .fn-label,
+.fn-gantt .g_green_d .fn-label,
+.fn-gantt .g_pink_d .fn-label,
+.fn-gantt .g_brown_d .fn-label,
+.fn-gantt .g_orange_d .fn-label,
+.fn-gantt .g_purple_D .fn-label,
+{
+color: #fff !important;
+}
