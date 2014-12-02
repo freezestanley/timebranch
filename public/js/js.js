@@ -188,16 +188,17 @@ angular.module('gameTool', ['ngRoute'])
 				//$scope.param.game = '-- 请选择 --';
 	   	});
 		
-		$http.get(day_table).success(function(data) {
+		/*$http.get(day_table).success(function(data) {
 				alert(day_table);
     			//$scope.phones = data;
 				if(data['status'] == true){
 					$rootScope.http = data['data'];
 				};
-	   	});
+	   	});*/
 		
 		var change = function(){
 			//alert('param:'+$scope.param);
+			alert($scope.param);
 			var name = $scope.param.game?$scope.param.game:'';
 			var query = day_table+"?gname="+name+"&pf="+$scope.param.platform+"&stime="+$scope.param.starttime+"&mtime="+$scope.param.endtime+"&market="+$scope.param.market;
 			$http.get(query).success(function(data) {
