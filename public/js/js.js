@@ -163,6 +163,7 @@ angular.module('gameTool', ['ngRoute'])
 	};
 	$scope.hide_dia = function(){
 			$scope.showDia = $scope.showDia == true?false:true;
+			$rootScope.pop_id ='';
 	};
 	$scope.$watch('showDia',dialog_change);
 	
