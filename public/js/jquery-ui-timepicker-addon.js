@@ -56,7 +56,7 @@
 			isRTL: false
 		};
 		this._defaults = { // Global defaults for all the datetime picker instances
-			showButtonPanel: true,
+			showButtonPanel: false,
 			timeOnly: false,
 			showHour: false,
 			showMinute: false,
@@ -771,9 +771,10 @@
 			if (this._defaults.timeOnly === true) {
 				formattedDateTime = this.formattedTime;
 			} else if (this._defaults.timeOnly !== true && (this._defaults.alwaysSetTime || timeAvailable)) {
-				formattedDateTime += this._defaults.separator + this.formattedTime + this._defaults.timeSuffix;
+				//formattedDateTime += this._defaults.separator + this.formattedTime + this._defaults.timeSuffix;
+				//formattedDateTime = this.formattedTime;
 			}
-
+			
 			this.formattedDateTime = formattedDateTime;
 
 			if (!this._defaults.showTimepicker) {
