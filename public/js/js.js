@@ -60,7 +60,7 @@
   $locationProvider.html5Mode(true);
 });*/
 
-
+var first = true;
 (function(angular) {
   'use strict';
 angular.module('gameTool', ['ngRoute'])
@@ -116,7 +116,12 @@ angular.module('gameTool', ['ngRoute'])
 .controller("dialogController",function($scope,$http,$rootScope){
 	$scope.showDia = false;
 	var pop_change = function(){
-			//$scope.showDia = true; 
+		if(first){
+			
+		}else{
+			$scope.showDia = true; 
+		};
+		first = false;
 		
 	};
 	$rootScope.$watch('pop_id',pop_change);
