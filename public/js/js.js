@@ -173,8 +173,8 @@ angular.module('gameTool', ['ngRoute'])
 		//$scope.param.game = '';
 		$scope.param.market = '';
 		$scope.param.platform = '';
-		$scope.param.endtime = new Date().getFullYear()+'-'+new Date().getMonth()+'-'+new Date().getDate();
-		$scope.param.starttime = new Date().getFullYear()+'-'+new Date().getMonth()+'-'+new Date().getDate();					
+		//$scope.param.endtime = new Date().getFullYear()+'-'+new Date().getMonth()+'-'+new Date().getDate();
+		//$scope.param.starttime = new Date().getFullYear()+'-'+new Date().getMonth()+'-'+new Date().getDate();					
 		$scope.menu_game = menu_game;
 		$scope.menu_market = menu_market
 		$scope.menu_platform = menu_form;
