@@ -269,7 +269,28 @@ class API extends CI_Controller {
                 $result[] = $_temp[$i];
             }
         }
-        return $result;
+        # 这里是合并同一天的 node
+        $temp = array();
+        foreach ($result as $node) {
+            $values = $node['values'];
+            $_temp = array();
+            foreach ($values as $value) {
+                $key = $value['from'];
+                if (array_key_exists($key, $_temp)) {
+                    $_temp[$key]['desc'] .= '<br/>' . $value['desc'];
+                    $_temp[$key]['customClass'] = 'g_purple_d';
+                } else {
+                    $_temp[$key] = $value;
+                }
+            }
+
+            $node['values'] = array();
+            foreach ($_temp as $key => $value) {
+                $node['values'][] = $value;
+            }
+            $temp[] = $node;
+        }
+        return $temp;
     }
 
     public function count()
