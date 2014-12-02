@@ -132,13 +132,13 @@ angular.module('gameTool', ['ngRoute'])
 		if($scope.showDia == true){
 			$scope.show_dia();
 			//alert($rootScope.pop_id);
-			/*$http.get(pop_url+$rootScope.pop_id).success(function(data) {
+			$http.get(pop_url+$rootScope.pop_id).success(function(data) {
 				if(data['status']){
 					$scope.history = data['data'];
 				}else{
 					alert(data['err_msg']);	
 				};
-	   		});*/
+	   		});
 		}else{
 			$scope.showDia = false;
 		}	
@@ -179,14 +179,14 @@ angular.module('gameTool', ['ngRoute'])
 		$scope.menu_market = menu_market
 		$scope.menu_platform = menu_form;
 		
-		/*$http.get(game_name_url).success(function(data) {
+		$http.get(game_name_url).success(function(data) {
 				//alert();
     			//$scope.phones = data;
 				if(data['status'] == true){
 					$scope.menu_game = data['data'];
 				};
 				//$scope.param.game = '-- 请选择 --';
-	   	});*/
+	   	});
 		
 		$http.get(day_table).success(function(data) {
 				alert(day_table);
@@ -200,9 +200,9 @@ angular.module('gameTool', ['ngRoute'])
 			//alert('param:'+$scope.param);
 			var name = $scope.param.game?$scope.param.game:'';
 			var query = day_table+"?gname="+name+"&pf="+$scope.param.platform+"&stime="+$scope.param.starttime+"&mtime="+$scope.param.endtime+"&market="+$scope.param.market;
-			/*$http.get(query).success(function(data) {
+			$http.get(query).success(function(data) {
 				$rootScope.http = data['data'];
-	   		});*/
+	   		});
 		};
 		$scope.$watch('param', change, true);
 })
