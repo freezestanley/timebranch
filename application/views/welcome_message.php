@@ -235,7 +235,7 @@
 </div>-->
 <div class="dialog" id="dialog" ng-controller="dialogController" ng-show="showDia">
 		<div class="dia_zone" id="dia_zone">
-        <a href="javascript:;" ng-click="showDia = showDia == true?false:true;" class="close"></a>
+        <a href="javascript:;" ng-click="hide_dia()" class="close"></a>
 
 			<table class="p_table">
             	<tr><td>项目时间</td><td>修改操作</td><td>修改时间</td><td>修改原因</td></tr>
@@ -243,7 +243,7 @@
             </table>
         </div>
 
-        <div class="mask" id="mask"  ng-click="showDia = showDia == true?false:true;"></div>
+        <div class="mask" id="mask"  ng-click="hide_dia()"></div>
 </div>
 
 <script>

@@ -116,6 +116,8 @@ angular.module('gameTool', ['ngRoute'])
 .controller("dialogController",function($scope,$http,$rootScope){
 	$scope.showDia = false;
 	var pop_change = function(){
+		if($rootScope.pop_id == '') return;
+		
 		if(first){
 			
 		}else{
@@ -142,8 +144,12 @@ angular.module('gameTool', ['ngRoute'])
 		}	
 	};
 	
-		
+	
 	$scope.show_dia = function(){
+		if($scope.showDia == false){ 
+			$rootScope.pop_id = '';
+			return;
+		};
 		$('#mask').css('width',function(){return $(document).width();});
 		$('#mask').css('height',function(){return $(document).height();});
 		//$('#mask').show();
@@ -156,11 +162,10 @@ angular.module('gameTool', ['ngRoute'])
 			});
 	};
 	$scope.hide_dia = function(){
-			//$('#mask').hide();
-			//$('#dialog').hide();
+			$scope.showDia = $scope.showDia == true?false:true;
 	};
 	$scope.$watch('showDia',dialog_change);
-	$scope.showDia = false;
+	
 })
 .controller("MenuController",function ($scope,$rootScope,$http){
 		$scope.param = {};
