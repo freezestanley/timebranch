@@ -239,9 +239,9 @@ class API extends CI_Controller {
                     $_node = array('id' => $project->pid,
                                    'from' => '/Date(' . strtotime($project->update_time) . '000)/',
                                    'to' => '/Date(' . strtotime($project->update_time) . '000)/',
-                                   'label' => $project->n_remark,
+                                   'label' => '',
                                    'desc' => $project->n_remark,
-                                   'customClass' => 'ganttRed');
+                                   'customClass' => $project->label_color);
 
                     if (isset($games[$key][$project->pid])) {
                         $games[$key][$project->pid]['values'][] = $_node;
