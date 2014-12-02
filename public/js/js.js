@@ -116,7 +116,7 @@ angular.module('gameTool', ['ngRoute'])
 .controller("dialogController",function($scope,$http,$rootScope){
 	$scope.showDia = false;
 	var pop_change = function(){
-			//$scope.showDia = true;
+			//$scope.showDia = true; 
 		
 	};
 	$rootScope.$watch('pop_id',pop_change);

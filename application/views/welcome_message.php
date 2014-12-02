@@ -236,7 +236,11 @@
 <div class="dialog" id="dialog" ng-controller="dialogController" ng-show="showDia">
 		<div class="dia_zone" id="dia_zone">
         <a href="javascript:;" ng-click="showDia = showDia == true?false:true;" class="close"></a>
+<<<<<<< HEAD
 			<table class="p_table"  >
+=======
+			<table class="p_table">
+>>>>>>> e15ca9268e989c5f37c42f60321fc39a25306528
             	<tr><td>项目时间</td><td>修改操作</td><td>修改时间</td><td>修改原因</td></tr>
             	<tr ng-repeat="h in history"><td >{{h.update_time}}</td><td>{{h.type | typefilter}}</td><td>{{h.addtime}}</td><td>{{h.remark}}</td></tr>
             </table>
