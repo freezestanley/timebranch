@@ -234,13 +234,13 @@ class API extends CI_Controller {
                     continue;
                 }
                 if ($key == $project->name) {
-                    // $from = date('Y-m-d 23:59:59', $project->update_time);
-                    // $to = date('Y-m-d 00:00:00', $project->update_time);
+                    $from = date('Y-m-d 23:59:59', strtotime($project->update_time));
+                    $to = date('Y-m-d 00:00:00', strtotime($project->update_time));
                     $_node = array('id' => $project->pid,
-                                   'from' => '/Date(' . strtotime($project->update_time) . '000)/',
-                                   'to' => '/Date(' . strtotime($project->update_time) . '000)/',
+                                   'from' => '/Date(' . strtotime($from) . '000)/',
+                                   'to' => '/Date(' . strtotime($to) . '000)/',
                                    'label' => '',
-                                   'desc' => $project->n_remark,
+                                   'desc' => '<b>' . $project->t_name . '</b><br/><small>' . $project->update_time .'</small>',
                                    'customClass' => $project->label_color);
 
                     if (isset($games[$key][$project->pid])) {
@@ -270,5 +270,10 @@ class API extends CI_Controller {
             }
         }
         return $result;
+    }
+
+    public function count()
+    {
+        $this->json($this->project->count_project_node());
     }
 }
