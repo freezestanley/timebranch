@@ -243,7 +243,7 @@
             </table>
         </div>
 
-        <div class="mask" id="mask"></div>
+        <div class="mask" id="mask"  ng-click="showDia = showDia == true?false:true;"></div>
 </div>
 
 <script>
