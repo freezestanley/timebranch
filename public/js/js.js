@@ -201,6 +201,8 @@ angular.module('gameTool', ['ngRoute'])
 			//alert('param:'+$scope.param);
 			//alert($scope.param);
 			//if($scope.param.starttime || $scope.param.endtime) return;
+			if($scope.param.starttime) return;
+			if($scope.param.endtime) return;
 			var name = $scope.param.game?$scope.param.game:'';
 			var query = day_table+"?gname="+name+"&pf="+$scope.param.platform+"&stime="+$scope.param.starttime+"&mtime="+$scope.param.endtime+"&market="+$scope.param.market;
 			$http.get(query).success(function(data) {
