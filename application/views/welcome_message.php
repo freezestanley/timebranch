@@ -290,13 +290,13 @@ var ztime;
         		  onClose:function(time){
                   $('#endtime').datepicker( "option", "minDate", time );
         				}
-            });
+            }).datepicker("setDate", new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDay());
       		jQuery('#endtime').datetimepicker({
       			dateFormat: "yy-mm-dd",
                 onClose:function(time){
                   $('#starttime').datepicker( "option", "maxDate", time );
                 }
-      		});
+      		}).datepicker("setDate", new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDay());
         });
 $(function () {
 
